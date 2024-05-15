@@ -1,0 +1,112 @@
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .section-{{ section.id }} .cta__wrapper {
+    background-image: url('{{ section.settings.img-desktop | img_url: 'master' }}');
+  }
+  @media (max-width: 750px) {
+    .section-{{ section.id }} .cta__wrapper {
+      background-image: url('{{ section.settings.img-mobile | img_url: 'master' }}');
+    }
+  }
+</style>
+
+<section class="cta section-{{ section.id }} section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cta__wrapper d-flex flex-column align-items-end justify-content-center position-relative">
+      <div class="cta__bg-text d-flex">
+        <p>{{ section.settings.vertical-text }}</p>
+      </div>
+      <div class="cta__wrapper-mobile d-flex flex-column align-items-end justify-content-center">
+        {% if section.settings.title %}
+          <h3 class="text-uppercase h3 mt-0 text-center">
+            {{ section.settings.title }}
+          </h3>
+        {% endif %}
+        <div class="d-flex justify-content-end w-100">
+          <a class="button button__primary" href="{{ section.settings.url }}">{{ section.settings.label }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img-desktop",
+      "label": "BG desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "img-mobile",
+      "label": "BG mobile"
+    },
+    {
+      "type": "text",
+      "id": "vertical-text",
+      "label": "BG Text",
+      "default": "SHINE&nbsp;&nbsp;&nbsp;&nbsp;SHINE&nbsp;&nbsp;&nbsp;&nbsp;SHINE"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "URL Button"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Text Button",
+      "default": "view our products"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

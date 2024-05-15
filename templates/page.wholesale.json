@@ -1,0 +1,116 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "66a620c9-96e9-4ae3-a32b-06eb3c376787": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--17175081713984__66a620c9-96e9-4ae3-a32b-06eb3c376787-1670414685427a946f-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "WHOLESALE & PROFESSIONALS",
+            "heading_size": "h2"
+          }
+        },
+        "template--17175081713984__66a620c9-96e9-4ae3-a32b-06eb3c376787-1670414685427a946f-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you'd like to become a retail partner or distributor of Peta Jane Beauty award-winning self-tanning products, please <strong>complete the form below<\/strong> and we will contact you with more information. <\/p><p><\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--17175081713984__66a620c9-96e9-4ae3-a32b-06eb3c376787-1670414685427a946f-0",
+        "template--17175081713984__66a620c9-96e9-4ae3-a32b-06eb3c376787-1670414685427a946f-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/peta-murgatroyd-with-her-self-tanning-products.jpg",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 24,
+        "padding_bottom": 28
+      }
+    },
+    "6a89c89b-44f3-42f4-9c99-bc4ba5683c7d": {
+      "type": "wholesale-images",
+      "blocks": {
+        "fc3b3d07-a1db-4f8f-9e73-2b525c3742ed": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_4.png",
+            "image_height": "672",
+            "text": "Affiliates",
+            "text_button": "Affiliates",
+            "button_url": "shopify:\/\/pages\/affiliates-creators"
+          }
+        },
+        "6885767a-5317-496e-b99a-3606bed1d512": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_5.png",
+            "image_height": "672",
+            "text": "Wholesale",
+            "text_button": "Wholesale",
+            "button_url": "shopify:\/\/pages\/self-tanning-wholesale"
+          }
+        }
+      },
+      "block_order": [
+        "fc3b3d07-a1db-4f8f-9e73-2b525c3742ed",
+        "6885767a-5317-496e-b99a-3606bed1d512"
+      ],
+      "disabled": true,
+      "settings": {
+        "wholesale_image_title": "Affiliates and Wholesale",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "77e70377-00d9-400d-8d3a-0b8db16bb91e": {
+      "type": "wholesale-form",
+      "settings": {
+        "heading": "PJB Retail Partners",
+        "subheading": "Please complete this form to start selling Peta Jane Beauty.",
+        "thank-title": "Thank you!",
+        "thank": "Thank you submitting the PJB wholesale form. Please check your email with your approval and instructions regarding the next steps! We look forward to working with you.",
+        "email_error": "<p>Hello!<br\/>It seems to us that an account has already been registered to this mail. If this is your account, please contact us via the <a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact Us\">contact form<\/a>, or fill out the form using a different email address.<\/p>",
+        "heading_size": "h1",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "8129a944-3f07-466e-967c-b9541f90d5a4": {
+      "type": "inst-block",
+      "settings": {
+        "app": true,
+        "title": "shop the feed",
+        "subtitle": "GET THE LOOK",
+        "marquee": "  Be part of us   ",
+        "overlay_opacity": 0,
+        "padding_top": 48,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "66a620c9-96e9-4ae3-a32b-06eb3c376787",
+    "6a89c89b-44f3-42f4-9c99-bc4ba5683c7d",
+    "77e70377-00d9-400d-8d3a-0b8db16bb91e",
+    "8129a944-3f07-466e-967c-b9541f90d5a4"
+  ]
+}

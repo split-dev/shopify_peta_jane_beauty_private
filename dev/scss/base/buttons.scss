@@ -1,0 +1,49 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  min-height: 50px;
+  padding: 5px 24px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  text-align: center;
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+  }
+  &:before,
+  &:after {
+    content: none;
+  }
+  &__primary {
+    color: #fff;
+    background-color: $c-text;
+    border: 1px solid $c-text;
+    &:hover {
+      background-color: #eadac9;
+      color: $c-text;
+    }
+  }
+  &__gold {
+    &:hover {
+      background-color: $c-text;
+    }
+  }
+  &__outline {
+    color: $c-text;
+    background-color: transparent;
+    border: 1px solid $c-text;
+    &:hover {
+      border: 1px solid $c-skin;
+      color: $c-skin;
+    }
+  }
+}
+.shopify-payment-button {
+  div[role=button] {
+    border-radius: 30px !important;
+    min-height: 52px !important;
+}
+}

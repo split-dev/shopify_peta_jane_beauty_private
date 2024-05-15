@@ -1,0 +1,148 @@
+/* The Modal (background) */
+.js-sale-modal {
+  &.active {
+    .SaleModal.reveal {
+      opacity: 1;
+      visibility: visible;
+      top: 0;
+    }
+  }
+}
+
+.SaleModal {
+  display: flex; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 5; /* Sit on top */
+  left: 0;
+  top: 100%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  align-items: flex-end;
+  visibility: hidden;
+  transition: all 0.4s;
+  pointer-events: none;
+  .page-width {
+    width: 100%;
+    @include media-breakpoint-down(xs) {
+      padding: 0 !important;
+    }
+  }
+  .sale-marquee {
+    display: flex;
+    overflow: hidden;
+    h3 {
+      color: $c-text;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: $font-family-base;
+      font-size: 16px;
+      line-height: 150%;
+      margin: 3px 0;
+    }
+  }
+}
+
+/* Modal Content/Box */
+.sale-modal {
+  &__content {
+    pointer-events: all;
+    position: relative;
+    margin: 0 auto; /* 15% from the top and centered */
+    padding: 20px 0 10px 0;
+    width: 100%; /* Could be more or less, depending on screen size */
+    max-width: 975px;
+    background: #fff;
+    border: 1px solid $c-text;
+    border-radius: 20px 20px 0 0;
+  }
+  &__wrapper {
+    padding: 0 30px 0 60px;
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      padding: 0 15px 0 10px;
+    }
+  }
+  &__percent {
+    font-family: $font-family-base;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: $c-text;
+    margin: 0;
+    @include media-breakpoint-down(xs) {
+      font-size: 64px;
+    }
+  }
+  &__percent-text {
+    font-family: $headings-font-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: $c-text;
+    margin: 0;
+    @include media-breakpoint-down(xs) {
+      font-size: 36px;
+    }
+  }
+  &__timer-wrapper {
+    margin-left: 20px;
+    @include media-breakpoint-down(sm) {
+      margin-top: 12px;
+    }
+    @media (max-width: 420px) {
+      margin-left: 0;
+    }
+    #demo {
+      margin: 0 20px;
+      transition: 0.2s;
+      background: rgba(202, 163, 120, 0.2);
+      border: 1px solid $c-text;
+      border-radius: 10px;
+      font-family: $headings-font-family;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 120%;
+      color: $c-text;
+      padding: 10px 10px;
+      min-width: 310px;
+      text-align: center;
+      @include media-breakpoint-down(xs) {
+        font-size: 24px;
+        min-width: 260px;
+      }
+      @media (max-width: 420px) {
+        margin: 0 0 0 16px;
+      }
+    }
+  }
+  &__button-mobile {
+    display: none;
+    @include media-breakpoint-down(sm) {
+      display: flex;
+      margin-left: 20px;
+      min-width: 151px;
+    }
+    a {
+      min-height: 54px;
+    }
+  }
+  &__button {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+  table {
+    border: none !important;
+    box-shadow: none !important;
+    * {
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "medium"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": false,
+            "blog_show_author": false
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "title",
+        "content"
+      ],
+      "settings": {
+      }
+    },
+    "487f2338-746b-49a5-a92f-dcfcf16e006e": {
+      "type": "featured-collection-new",
+      "settings": {
+        "collection": "best-self-tanning-products",
+        "title": "SHOP OUR BEST SELLING SELF-TANNERS",
+        "show_secondary_image": true,
+        "enable_quick_add": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "34232c08-9634-4891-99f3-830ab36e0e57": {
+      "type": "inst-block",
+      "settings": {
+        "app": true,
+        "title": "SHOP THE FEED",
+        "subtitle": "GET THE LOOK",
+        "marquee": "",
+        "overlay_opacity": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "487f2338-746b-49a5-a92f-dcfcf16e006e",
+    "34232c08-9634-4891-99f3-830ab36e0e57"
+  ]
+}

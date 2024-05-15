@@ -1,0 +1,177 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+  .section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  }
+{%- endstyle -%}
+
+<section class="slideshow-videos section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="section-title">
+      {% if section.settings.title %}
+        <h2 class="h3 mt-0 color-text text-uppercase text-32px-all">{{ section.settings.title }}</h2>
+      {% endif %}
+    </div>
+    <div class="slideshow-videos__slider position-relative js-slideshow-videos-slider-init swiper-container">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide slideshow-videos__item slideshow-videos__item-{{ block.id }}" data-video-wrapper>
+            {% if block.settings.video_link != blank %}
+              <div class="slideshow-videos__media">
+                <div class="poster" data-bg="{{ block.settings.video_image | img_url: 'master' }}">
+                  <a
+                    class="iframe-lightbox-custom"
+                    href="{{ block.settings.video_link }}"
+                    data-padding-bottom="56.25%"
+                  >
+                    {% render 'icon-play' %}
+                  </a>
+                </div>
+                <div class="apply__video-overlay" style="opacity: 0.{{ section.settings.overlay_opacity }}"></div>
+                {% if block.settings.text %}
+                  <h4 class="slideshow-videos__block-title text-24px">{{ block.settings.text }}</h4>
+                {% endif %}
+              </div>
+            {% else %}
+              <div class="slideshow-videos__img-bg w-100">
+                <img loading="lazy" src="{{ block.settings.img | img_url: '405x' }}" alt="{{ block.settings.img.alt }}">
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-slideshow-videos-button-prev swiper-nav-prev">{% render 'icon-slider-caret' %}</div>
+      <div class="swiper-slideshow-videos-button-next swiper-nav-next">{% render 'icon-slider-caret' %}</div>
+    </div>
+    {% if section.settings['button-url'] != blank %}
+      <div class="slideshow-videos__button d-flex justify-content-center">
+        <a class="button button__outline" href="{{ section.settings.button-url }}">
+          {{- section.settings['button-text'] -}}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{%- comment -%}
+  <script>
+    const allVideos = document.querySelectorAll('.slideshow-videos__item video');
+    const allButtons = document.querySelectorAll('.slideshow-videos__item svg');
+    const allImg = document.querySelectorAll('.slideshow-videos__item .slideshow-videos__img');
+
+    for (let i = 0; i < allButtons.length; i++) {
+      allButtons[i].addEventListener('click', () => {
+
+        for (let k = 0; k < allButtons.length; k++) {
+          if (allButtons[k] != allButtons[i]) {
+            allVideos[k].pause();
+            allVideos[k].classList.remove('show');
+            allVideos[k].nextElementSibling.classList.remove('hide');
+            allVideos[k].nextElementSibling.nextElementSibling.classList.remove('hide');
+            allVideos[k].nextElementSibling.nextElementSibling.nextElementSibling.classList.remove('hide');
+            allVideos[k].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.remove('hide');
+
+          }
+        }
+      });
+    }
+  </script>
+{%- endcomment -%}
+
+{% schema %}
+{
+  "name": "Slideshow with Videos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 99,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button-url",
+      "label": "URL button"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Item Title"
+        },
+        {
+          "type": "url",
+          "id": "video_link",
+          "label": "Video link"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_image",
+          "label": "Video Poster"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image",
+          "info": "Use this field when you only want to upload an image and not a video."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slideshow with Videos",
+      "category": "New"
+    }
+  ]
+}
+{% endschema %}

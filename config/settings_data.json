@@ -1,0 +1,282 @@
+{
+  "current": {
+    "colors_accent_1": "#caa378",
+    "colors_accent_2": "#fbefe2",
+    "colors_text": "#282119",
+    "colors_outline_button_labels": "#121212",
+    "type_header_font": "abel_n4",
+    "type_body_font": "montserrat_n4",
+    "page_width": 1500,
+    "spacing_grid_horizontal": 28,
+    "spacing_grid_vertical": 28,
+    "inputs_radius": 10,
+    "card_corner_radius": 10,
+    "blog_card_corner_radius": 10,
+    "sale-modal-enable": false,
+    "sale_modal_delay": 3,
+    "sale-modal-button": false,
+    "sale-modal-date": "<table align=\"center\">\n  <tbody>\n    <tr>\n      <td><img src=\"https:\/\/gen.sendtric.com\/countdown\/xzwnaxxlza\" style=\"display: block;max-width:100%;\"><\/td>\n    <\/tr>\n  <\/tbody>\n<\/table>",
+    "sale-marquee": "•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Holiday Sale 20%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+    "sale-modal-percent": "20",
+    "sale-modal-button-label": "SHOP SALE",
+    "sale-modal-button-url": "shopify:\/\/collections\/best-self-tanning-products",
+    "modal-enable": false,
+    "subscription_modal_delay": 8,
+    "subscription_modal_once": true,
+    "modal-heading": "GET ON THE LIST",
+    "modal-text": "Sign up and be the first to exclusive drops, special offers, and important updates.",
+    "badge": "Best Seller",
+    "badge_new": "New",
+    "badge_sale": "Sale",
+    "badge_position": "top left",
+    "sale_badge_color_scheme": "accent-1",
+    "sold_out_badge_color_scheme": "background-1",
+    "faq_title_1": "Products",
+    "faq_question_category_1": "Is this product suitable for sensitive skin?",
+    "faq_answer_category_1": "<p>Yes. However if you have any specific concerns we always recommend speaking to your Doctor\/Dermatologist before aplying any new products!<\/p>",
+    "faq_question_category_2": "Can I use the Tanning Mousse on my face?",
+    "faq_answer_category_2": "<p>Yes! All Peta Jane Products are safe to use on your face, as always we recommend a patch test before any application. You can also try the Peta Jane Mist underneath or on top of your make up.<\/p>",
+    "faq_question_category_3": "Are Peta Jane Beauty products vegan?",
+    "faq_answer_category_3": "<p>Yes, all our products are vegan and organically derived.<\/p>",
+    "faq_question_category_4": "Are Peta Jane Beauty products safe to use while pregnant?",
+    "faq_answer_category_4": "<p>Yes, all Peta Jane Beauty products are safe to use while pregnant. We recommend checking with your GP before using any new product during a pregnancy.<\/p>",
+    "faq_question_category_5": "What is the shelflife of Peta Jane Beauty products?",
+    "faq_answer_category_5": "<p>You can store your Peta Jane Beauty products for up to 3 years.<\/p>",
+    "faq_question_category_6": "Does the Mist last as long as the Mousse?",
+    "faq_answer_category_6": "<p>Yes, both the Mist and the Mousse last up to 7 days. The mist is perfect for touch ups over the mousse too!<\/p>",
+    "faq_question_category_7": "How long does it take for the Mist to dry?",
+    "faq_answer_category_7": "<p>It takes about a minute to dry just like our Mousse! Let it dry then get dressed and rinse it off after 6\/8 hours!<\/p>",
+    "faq_question_category_8": "What’s the difference between the Mist and Mousse?",
+    "faq_answer_category_8": "<p>The application process is the only difference, the Mousse requires a mitt and the mist you just spray on. Our Tanning Mist only comes in a Medium shade, and our Tanning Mousse comes in 3 shades.<\/p>",
+    "faq_question_category_9": "How long does the tan last?",
+    "faq_answer_category_9": "<p>The tan lasts up to 7 days and will fade like a natural sun tan would!<\/p>",
+    "faq_title_2": "How To",
+    "faq_question_category_12": "How do I clean the Tanning Mitt?",
+    "faq_answer_category_12": "<p>The Mitt is washing machine safe (just don't put it in with your whites). You can also handwash it and let it air dry. We do not recommend putting the Mitt in the dryer.<\/p>",
+    "faq_question_category_13": "Will using daily sunscreen fade the tan?",
+    "faq_answer_category_13": "<p>No! We recommend wearing SPF over your tan everyday as our products do not contain any SPF.<\/p>",
+    "faq_question_category_14": "Does the Mist stain clothes\/floors\/walls?",
+    "faq_answer_category_14": "<p>We recommend putting a towel down on the floor when you spray. To avoid it getting on clothes, wait a couple of minutes to dry then get dressed. No exercise, sweating, or water of any kind for 6\/8 hours.<\/p>",
+    "faq_title_3": "Shipping",
+    "faq_question_category_17": "Do you ship internationally? If so, which countries?",
+    "faq_answer_category_17": "<p>We currently only ship to the United States but we are working on expanding shipping to other countries!<\/p>",
+    "faq_question_1": "Is this product suitable for sensitive skin?",
+    "faq_answer_1": "Yes. However if you have any specific concerns we always recommend speaking to your Doctor\/Dermatologist before aplying any new products!",
+    "faq_question_2": "Can I use the Tanning Mousse on my face?",
+    "faq_answer_2": "Yes! All Peta Jane Products are safe to use on your face, as always we recommend a patch test before any application. You can also try the Peta Jane Mist underneath or on top of your make up.",
+    "faq_question_3": "Are Peta Jane Beauty products vegan?",
+    "faq_answer_3": "Yes, all our products are vegan and organically derived.",
+    "faq_question_4": "Are Peta Jane Beauty products safe to use while pregnant?",
+    "faq_answer_4": "Yes, all Peta Jane Beauty products are safe to use while pregnant. We recommend checking with your GP before using any new product during a pregnancy.",
+    "faq_question_5": "What is the shelflife of Peta Jane Beauty products?",
+    "faq_answer_5": "You can store your Peta Jane Beauty products for up to 3 years.",
+    "faq_question_6": "How do I clean the Tanning Mitt?",
+    "faq_answer_6": "The Mitt is washing machine safe (just don't put it in with your whites). You can also handwash it and let it air dry. We do not recommend putting the Mitt in the dryer.",
+    "faq_question_7": "Will using daily sunscreen fade the tan?",
+    "faq_answer_7": "No! We recommend wearing SPF over your tan everyday as our products do not contain any SPF.",
+    "faq_question_8": "Does the Mist stain clothes\/floors\/walls?",
+    "faq_answer_8": "We recommend putting a towel down on the floor when you spray. To avoid it getting on clothes, wait a couple of minutes to dry then get dressed. No exercise, sweating, or water of any kind for 6\/8 hours.",
+    "faq_question_9": "Does the Mist last as long as the Mousse?",
+    "faq_answer_9": "Yes, both the Mist and the Mousse last up to 7 days. The mist is perfect for touch ups over the mousse too!",
+    "faq_question_10": "How long does it take for the Mist to dry?",
+    "faq_answer_10": "It takes about a minute to dry just like our Mousse! Let it dry then get dressed and rinse it off after 6\/8 hours!",
+    "faq_question_11": "What’s the difference between the Mist and Mousse?",
+    "faq_answer_11": "The application process is the only difference, the Mousse requires a mitt and the mist you just spray on. Our Tanning Mist only comes in a Medium shade, and our Tanning Mousse comes in 3 shades.",
+    "faq_question_12": "Do you ship internationally? If so, which countries?",
+    "faq_answer_12": "We currently only ship to the United States but we are working on expanding shipping to other countries!",
+    "faq_question_13": "How long does the tan last?",
+    "faq_answer_13": "The tan lasts up to 7 days and will fade like a natural sun tan would!",
+    "wholesale-product_message": "<p>To access wholesale purchases, please fill out the <a href=\"\/pages\/self-tanning-wholesale\" title=\"Wholesale & Distribution\">form<\/a> or log in using your wholesale account.<\/p>",
+    "collection_link": "shopify:\/\/collections\/best-self-tanning-products",
+    "social_twitter_link": "",
+    "social_facebook_link": "https:\/\/www.facebook.com\/PetaJaneBeauty\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/petajanebeauty\/?hl=en",
+    "social_tiktok_link": "https:\/\/www.tiktok.com\/@petajanebeauty",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCwXS3z9dG-q1fkaGpGvls6w\/videos?view=0&sort=p",
+    "favicon": "shopify:\/\/shop_images\/favicon_2.png",
+    "cart_type": "page",
+    "checkout_logo_image": "shopify:\/\/shop_images\/PetaJaneLogo_1_c5f47479-9a75-4f6c-b693-b25c8ce044eb.png",
+    "checkout_body_background_color": "#FFFFFF",
+    "checkout_sidebar_background_color": "#fbefe2",
+    "checkout_accent_color": "#caa378",
+    "checkout_button_color": "#282119",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announcement-bar-0": {
+            "type": "announcement",
+            "settings": {
+              "show_ticker": false,
+              "marquee": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WOMEN'S DAY FREE SHIPPING &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WOMEN'S DAY FREE SHIPPING &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WOMEN'S DAY FREE SHIPPING",
+              "text": "",
+              "text_alignment": "center",
+              "color_scheme": "custom",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "announcement-bar-0"
+        ],
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "0315d64f-bd69-4abe-ae45-319242c180c3": {
+            "type": "product",
+            "settings": {
+              "product": "best-light-self-tanning-mousse",
+              "text": "For a more subtle glow!"
+            }
+          },
+          "f22a35c9-2345-4d7c-a64f-80af3af821ad": {
+            "type": "product",
+            "settings": {
+              "product": "medium-self-tanning-mousse",
+              "text": "The original formula for all skin types!"
+            }
+          },
+          "f2116670-3a43-463c-9394-130147eed18a": {
+            "type": "product",
+            "settings": {
+              "product": "best-dark-self-tanning-mousse",
+              "text": "For a a much deeper, bronzed glow."
+            }
+          },
+          "b0c0a389-6525-40e1-bdc7-44d33e72d477": {
+            "type": "product",
+            "settings": {
+              "product": "best-self-tanning-mist",
+              "text": "Can be used for face and body!"
+            }
+          },
+          "7bb32cd1-ef78-4a51-a296-2d44d66b8e13": {
+            "type": "product",
+            "settings": {
+              "product": "bronzing-mitt",
+              "text": "An essential must have."
+            }
+          },
+          "fec4819f-9a89-4f47-93d4-9b130b073e34": {
+            "type": "product",
+            "settings": {
+              "product": "back-tanning-applicator",
+              "text": "For those hard to reach places."
+            }
+          }
+        },
+        "block_order": [
+          "0315d64f-bd69-4abe-ae45-319242c180c3",
+          "f22a35c9-2345-4d7c-a64f-80af3af821ad",
+          "f2116670-3a43-463c-9394-130147eed18a",
+          "b0c0a389-6525-40e1-bdc7-44d33e72d477",
+          "7bb32cd1-ef78-4a51-a296-2d44d66b8e13",
+          "fec4819f-9a89-4f47-93d4-9b130b073e34"
+        ],
+        "settings": {
+          "color_scheme": "background-1",
+          "logo": "shopify:\/\/shop_images\/PetaJaneLogo_1.png",
+          "logo_width": 140,
+          "logo_position": "middle-center",
+          "menu": "main-menu",
+          "menu_type_desktop": "dropdown",
+          "show_line_separator": true,
+          "enable_sticky_header": true,
+          "mobile_logo_position": "center",
+          "margin_bottom": 0,
+          "padding_top": 16,
+          "padding_bottom": 16,
+          "link-label": "Shop",
+          "link-url": "shopify:\/\/collections",
+          "wholesale_title": "Professionals",
+          "wholesale_url": "shopify:\/\/collections\/peta-jane-beauty-wholesale-self-tanning"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "fe2fd254-9226-407f-952d-f7cdb648aceb": {
+            "type": "link_list",
+            "settings": {
+              "link_list": "footer-shop"
+            }
+          },
+          "5a474482-3c7b-4d27-8d14-9631cf90f907": {
+            "type": "link_list",
+            "disabled": true,
+            "settings": {
+              "link_list": "footer"
+            }
+          },
+          "58f25c1c-e344-4cd0-a2f1-5d8d769b489d": {
+            "type": "link_list",
+            "settings": {
+              "link_list": "footer-privacy"
+            }
+          }
+        },
+        "block_order": [
+          "fe2fd254-9226-407f-952d-f7cdb648aceb",
+          "5a474482-3c7b-4d27-8d14-9631cf90f907",
+          "58f25c1c-e344-4cd0-a2f1-5d8d769b489d"
+        ],
+        "settings": {
+          "footer-logo": "<svg width=\"160\" height=\"44\" viewbox=\"0 0 160 44\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M26.5455 37.4407V22.1018H36.6263V19.9426H26.5455V6.78331H40.2222V4.66479H24.4445V39.5592H40.2626V37.4407H26.5455Z\" fill=\"#282119\"><\/path>\n<path d=\"M60.8686 4.66479H42.5454V6.78331H50.6868V39.5592H52.7474L52.7272 6.78331H60.8686V4.66479Z\" fill=\"#282119\"><\/path>\n<path d=\"M69.3132 4.66479H67.8586L57.3334 39.5592H59.7172L63.293 27.3981H73.899L77.6162 39.5592H80L69.3738 4.8685L69.3132 4.66479ZM63.9192 25.2796L68.5859 9.59442L73.3738 25.2796H63.9192Z\" fill=\"#282119\"><\/path>\n<path d=\"M88.9495 31.2685C88.9293 33.1426 88.5455 35.2611 87.0505 36.524C85.8182 37.5629 84.0404 37.5426 82.5253 37.5426V39.5389C82.7879 39.5592 84.202 39.5185 84.303 39.5185C85.2121 39.4574 86.1616 39.2944 87.0303 38.9889C88.7677 38.3574 89.8586 37.0129 90.4243 35.3018C90.9899 33.5703 91.0707 31.7166 91.0505 29.924L91.0101 4.64441H88.9899L88.9495 31.2685Z\" fill=\"#282119\"><\/path>\n<path d=\"M135.253 34.1204L119.616 4.66479H117.515V39.5592H119.616V8.73887L135.657 39.5592H137.333V4.66479H135.253V34.1204Z\" fill=\"#282119\"><\/path>\n<path d=\"M104.364 4.64441H102.909L92.3838 39.5389H94.7676L98.3434 27.3777H108.949L112.667 39.5389H115.05L104.444 4.84811L104.364 4.64441ZM98.9696 25.2592L103.636 9.57404L108.424 25.2592H98.9696Z\" fill=\"#282119\"><\/path>\n<path d=\"M142.505 37.4407V22.0814H152.586V19.9222H142.505V6.76293H156.182V4.64441H140.404V39.5389H156.222V37.4407H142.505Z\" fill=\"#282119\"><\/path>\n<path d=\"M13.798 4.7259C10.5455 4.48145 7.23232 4.60368 3.95959 4.60368H3.93939L3.91919 39.4981H6V22.0407H12.1818C14.4646 22.0407 17.3939 21.8574 19.2929 20.4315C20.3232 19.6574 21.0303 18.4759 21.4141 17.2333C21.798 15.9907 21.899 14.6666 21.899 13.3629C21.899 11.9981 21.798 10.6129 21.3939 9.30923C20.9091 7.80182 19.9798 6.39627 18.5657 5.66293C17.3333 5.03145 15.8182 4.88886 14.4646 4.76664C14.2626 4.74627 14.0404 4.74627 13.798 4.7259ZM12.0202 19.9018H6.0202V6.74256C8.28283 6.74256 10.5657 6.66108 12.8283 6.72219C15.1919 6.76293 18.1212 6.84442 19.1717 9.45182C19.4545 10.1648 19.6162 10.6537 19.697 11.4277C19.9192 13.4037 19.8586 15.8277 18.8687 17.5592C17.7778 19.4333 14.9697 19.8 12.0202 19.9018Z\" fill=\"#282119\"><\/path>\n<\/svg>",
+          "form-text": "<p><strong>Exclusive member drops & special offers<\/strong> without the junk. Get on the list babe! <\/p>",
+          "wholesale_title": "wholesale collection",
+          "wholesale_url": "shopify:\/\/collections\/peta-jane-beauty-wholesale-self-tanning",
+          "bottom-text": "Peta Jane LLC. All Rights Reserved."
+        }
+      },
+      "modal": {
+        "type": "modal",
+        "settings": {
+        }
+      },
+      "sale-modal": {
+        "type": "sale-modal",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "733389323033596483": {
+        "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/theme-settings\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+        "disabled": false,
+        "settings": {
+          "show_preview_data": true
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#4d3821",
+          "button_icon": "chat_bubble",
+          "button_text": "no_text",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "Well come Peta Jane! Please let us know how we can help! "
+        }
+      },
+      "6065014864672580889": {
+        "type": "shopify:\/\/apps\/slide-cart-by-amp\/blocks\/app-embed\/0a410b8d-7dc4-4f2d-b4e8-c12d34fd2255",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  }
+}

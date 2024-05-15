@@ -1,0 +1,98 @@
+{% if settings.modal-enable %}
+{% unless customer.accepts_marketing %}
+<subscripton-modal id="myModal" class="modal d-none"
+  data-section-id="{{ section.id }}"
+  data-delay="{{ settings.subscription_modal_delay }}" 
+  data-once-per-session="{{ settings.subscription_modal_once }}"
+  data-is-customer-subscribed="{{ customer.accepts_marketing }}"
+>
+  <div class="page-width position-relative">
+    <div class="modal-content">
+      <span class="close" data-modal-close>&times;</span>
+      <h3 class="text-center text-uppercase mt-0">{{ settings.modal-heading}}</h3>
+      <p class="text-center">{{ settings.modal-text}}</p>
+      <div>
+        <div class="footer__form">
+          {% form 'customer', class: 'newsletter-form' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="footer__field-wrapper">
+              <div class="field footer__form-box">
+                <input
+                        id="NewsletterForm--{{ section.id }}"
+                        type="email"
+                        name="contact[email]"
+                        class="field__input"
+                        value="{{ form.email }}"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        autocomplete="email"
+                        value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                        {% if form.errors %}
+                          autofocus
+                          aria-invalid="true"
+                          aria-describedby="Newsletter-error--{{ section.id }}"
+                          {% elsif form.posted_successfully? %}
+                          aria-describedby="Newsletter-success--{{ section.id }}"
+                        {% endif %}
+                        placeholder="{{ 'newsletter.label' | t }}"
+                        required
+                >
+                <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                  {{ 'newsletter.label' | t }}
+                </label>
+                <button type="submit" class="newsletter-form__button button button__primary text-uppercase" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+                  subscribe
+                </button>
+              </div>
+              {%- if form.errors -%}
+                <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+              {%- endif -%}
+            </div>
+            {%- if form.posted_successfully? -%}
+              <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+            {%- endif -%}
+          {% endform %}
+        </div>
+        <a class="d-none button button__primary text-center" href="{{ settings.modal-button-url}}">{{ settings.modal-button-label}}</a>
+      </div>
+    </div>
+  </div>
+</subscripton-modal>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // When the user clicks anywhere outside of the modal, close it
+
+  window.onclick = function(event) {
+
+    if (event.target == modal) {
+      modal.hide();
+    }
+  }
+
+</script>
+
+
+ {% endunless %}
+
+{% endif %}
+{% schema %}
+{
+  "name": "Subscribe Modal",
+  "settings": [
+    {
+    "type": "header",
+    "content": "Settings",
+    "info": "This section is editable via theme settings under Dropdowns and Pop-Ups"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscribe Modal"
+    }
+  ]
+}
+{% endschema %}

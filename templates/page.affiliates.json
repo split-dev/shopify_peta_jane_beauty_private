@@ -1,0 +1,172 @@
+{
+  "sections": {
+    "54aeef54-77b5-4890-9ee2-722bfa718bde": {
+      "type": "about-banner",
+      "blocks": {
+        "c01a47e3-6398-4986-9320-7ebb053d3126": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Peta-murgatroyd-peta-jane-beauty-self-tanning-bottle-square.jpg"
+          }
+        },
+        "71e19f01-ff1d-4d9e-8b61-b55b6a18a7a9": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Peta-murgatroyd-sitting-fake-tan-square.jpg"
+          }
+        },
+        "0bd29d51-bc2c-4b89-9cb7-b1787c711f66": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/peta-murgatroyd-tanning-line.png"
+          }
+        }
+      },
+      "block_order": [
+        "c01a47e3-6398-4986-9320-7ebb053d3126",
+        "71e19f01-ff1d-4d9e-8b61-b55b6a18a7a9",
+        "0bd29d51-bc2c-4b89-9cb7-b1787c711f66"
+      ],
+      "settings": {
+        "padding_top": 10,
+        "padding_bottom": 0
+      }
+    },
+    "c702e038-2bfc-4f05-8782-eac6ed2d633c": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19034181435712__c702e038-2bfc-4f05-8782-eac6ed2d633c-1683659291372e4591-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>AFFILIATE & CREATOR PROGRAM<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--19034181435712__c702e038-2bfc-4f05-8782-eac6ed2d633c-1683659291372e4591-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to the Peta Jane Beauty creator & influencer partnership program! It's simple: show off your flawless PJB tan, and get paid for it!  Whether you're a seasoned creator, blogger, beauty and skincare guru, or simply love Peta Jane Beauty tan, easily earn commission by spreading the word about our award-winning tanning products!<\/p><p><\/p><p>Here's how it works: <\/p><p>1. Sign up for the affiliate program by clicking the button below. <\/p><p>2. Once approved, we'll connect you with our ambassador concierge to send you PJB products and create your custom code.<\/p><p>3. Show off your tan with your custom code to get paid!<\/p><p>It's almost as easy as getting a PJB tan. Become a Peta Jane Ambassador today! <\/p>"
+          }
+        },
+        "template--19034181435712__c702e038-2bfc-4f05-8782-eac6ed2d633c-1683659291372e4591-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "SIGN UP",
+            "button_link": "https:\/\/petajanebeauty.refersion.com\/affiliate\/registration",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--19034181435712__c702e038-2bfc-4f05-8782-eac6ed2d633c-1683659291372e4591-0",
+        "template--19034181435712__c702e038-2bfc-4f05-8782-eac6ed2d633c-1683659291372e4591-1",
+        "template--19034181435712__c702e038-2bfc-4f05-8782-eac6ed2d633c-1683659291372e4591-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "4e0dd795-8efb-4adc-bf2e-79ed6496850b": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "cover_image": "shopify:\/\/shop_images\/peta-murgatroyd-with-her-self-tanning-products.jpg",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_e76p-0NuZM",
+        "description": "About Peta Jane Beauty Self Tanning Products",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "3accb7d5-93fa-4bf8-92f6-92ce29932d02": {
+      "type": "page-about",
+      "blocks": {
+        "efe288a3-0b41-4733-b857-63a79591395c": {
+          "type": "present_block_image",
+          "disabled": true,
+          "settings": {
+            "presentation_image": "shopify:\/\/shop_images\/about_presentation_img.png"
+          }
+        },
+        "af8ece20-f93f-422a-a3f0-4ace9cd620f8": {
+          "type": "present_block_numbers",
+          "settings": {
+            "presentation_number": "",
+            "presentation_text": ""
+          }
+        },
+        "0d4fe802-c3d0-4e53-a8f1-61c08be692a4": {
+          "type": "present_block_numbers",
+          "settings": {
+            "presentation_number": "",
+            "presentation_text": ""
+          }
+        },
+        "ff52e932-9c5c-41a7-9474-a6400471f8af": {
+          "type": "present_block_numbers",
+          "settings": {
+            "presentation_number": "",
+            "presentation_text": ""
+          }
+        },
+        "94d4f158-8987-4a33-81d9-8fbee5db3516": {
+          "type": "present_block_numbers",
+          "settings": {
+            "presentation_number": "",
+            "presentation_text": ""
+          }
+        },
+        "b8101ad0-0457-49ac-888f-16326837e377": {
+          "type": "present_block_note",
+          "settings": {
+            "presentation_note_icon": "shopify:\/\/shop_images\/about_presentation_note_icon_937d5bdf-7ff3-43d8-9cc3-428d1ae4e03e.png",
+            "presentation_note_text": "<p>Peta Jane Murgatroyd is an internationally celebrated actress, dancer, and TV personality. Her commitment to a healthy lifestyle inspired her to develop products to help you look good and feel confident.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "efe288a3-0b41-4733-b857-63a79591395c",
+        "af8ece20-f93f-422a-a3f0-4ace9cd620f8",
+        "0d4fe802-c3d0-4e53-a8f1-61c08be692a4",
+        "ff52e932-9c5c-41a7-9474-a6400471f8af",
+        "94d4f158-8987-4a33-81d9-8fbee5db3516",
+        "b8101ad0-0457-49ac-888f-16326837e377"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 4,
+        "padding_bottom": 36
+      }
+    },
+    "3bf913e4-f548-4649-be9e-32f6f10fbac3": {
+      "type": "inst-block",
+      "settings": {
+        "app": true,
+        "title": "SHOP THE FEED",
+        "subtitle": "GET THE LOOK",
+        "marquee": "",
+        "overlay_opacity": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "54aeef54-77b5-4890-9ee2-722bfa718bde",
+    "c702e038-2bfc-4f05-8782-eac6ed2d633c",
+    "4e0dd795-8efb-4adc-bf2e-79ed6496850b",
+    "3accb7d5-93fa-4bf8-92f6-92ce29932d02",
+    "3bf913e4-f548-4649-be9e-32f6f10fbac3"
+  ]
+}

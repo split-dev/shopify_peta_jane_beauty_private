@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "416e8f4f-f2e6-4642-99ce-4e231e435693": {
+      "type": "top-banner",
+      "settings": {
+        "img-desktop": "shopify:\/\/shop_images\/3-models-after-self-tanning-laughing-with-peta-murgtroyd.jpg",
+        "img-mobile": "shopify:\/\/shop_images\/3-models-after-self-tanning-laughing-with-peta-murgtroyd-2_7a8a5f65-a234-4d87-85f3-a3585134d87b.jpg",
+        "title": "PETA JANE WHOLESALE",
+        "text": "<p>For our retail partners and distributors. <\/p>",
+        "enable-overlay": true
+      }
+    },
+    "6059e0fd-9fc2-4b4a-ac34-662a392a6c41": {
+      "type": "wholesale-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "login_message": "<p>To make wholesale purchases, <a href=\"https:\/\/petajanebeauty.com\/account\/login\" title=\"https:\/\/petajanebeauty.com\/account\/login\">log in<\/a> using your wholesaler account.<\/p>",
+        "form_message": "<p>To access wholesale purchases, please <a href=\"https:\/\/petajanebeauty.com\/account\/login\" title=\"https:\/\/petajanebeauty.com\/account\/login\">log in<\/a> to your account or fill out the PJB wholesale <a href=\"\/pages\/self-tanning-wholesale\" title=\"Wholesale & Distribution\">form.<\/a><\/p>",
+        "padding_top": 36,
+        "padding_bottom": 8
+      }
+    },
+    "23be8c9d-5199-4f65-9904-e1e80d89cf19": {
+      "type": "faq",
+      "settings": {
+        "faq_background": "#f0e4d7",
+        "main_title": "",
+        "faq_title": "FAQ"
+      }
+    },
+    "da5a6512-3ff1-4ea7-9c1f-8414ecaffb76": {
+      "type": "inst-block",
+      "blocks": {
+        "268989e8-fb7f-4178-b04a-fc31f0acdd8c": {
+          "type": "text",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_10.jpg",
+            "video_link": ""
+          }
+        },
+        "3b799c36-9680-44fc-9fa3-157363abd950": {
+          "type": "text",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_9.jpg",
+            "video_link": ""
+          }
+        },
+        "ca5a4e0b-a5fb-49f1-8e6e-1298160d27fb": {
+          "type": "text",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_8_5.jpg",
+            "video_link": ""
+          }
+        },
+        "8e35501d-2ede-4ee7-bb73-36d980ae9a04": {
+          "type": "text",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/1_4.jpg",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "268989e8-fb7f-4178-b04a-fc31f0acdd8c",
+        "3b799c36-9680-44fc-9fa3-157363abd950",
+        "ca5a4e0b-a5fb-49f1-8e6e-1298160d27fb",
+        "8e35501d-2ede-4ee7-bb73-36d980ae9a04"
+      ],
+      "settings": {
+        "app": true,
+        "title": "SHOP THE FEED",
+        "subtitle": "GET THE LOOK",
+        "marquee": "AWARD WINNING SELF TANNERS",
+        "overlay_opacity": 0,
+        "padding_top": 80,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "416e8f4f-f2e6-4642-99ce-4e231e435693",
+    "6059e0fd-9fc2-4b4a-ac34-662a392a6c41",
+    "23be8c9d-5199-4f65-9904-e1e80d89cf19",
+    "da5a6512-3ff1-4ea7-9c1f-8414ecaffb76"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "a5163555-5888-4f8d-8053-8fc3bf66bdca": {
+      "type": "contact-banner",
+      "settings": {
+        "img-desktop": "shopify:\/\/shop_images\/3-models-self-tanned-tanning-mousse.png",
+        "img-mobile": "shopify:\/\/shop_images\/Peta-murgatroyd-and-2-models-self-tanned-peta-jane-beauty-2_47e213a9-b14d-460c-ace7-eef9a2eaa158.jpg",
+        "subtitle": "How can we help?",
+        "form-text-under": "Product or application questions? We might have a quicker answer in our FAQ below!  If you are interested in wholesale and distribution please scroll down for wholesale contact. "
+      }
+    },
+    "858d5f89-92ca-4efe-8d24-a09c99072759": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17047689756992__858d5f89-92ca-4efe-8d24-a09c99072759-1670600365f1cb48de-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>WHOLESALE & DISTRIBUTION<\/p>",
+            "heading_size": "h2"
+          }
+        },
+        "template--17047689756992__858d5f89-92ca-4efe-8d24-a09c99072759-1670600365f1cb48de-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you'd like to become a wholesale or distributor of Peta Jane Beauty award-winning self-tanning products, please fill out the form at the link below.<\/p>"
+          }
+        },
+        "template--17047689756992__858d5f89-92ca-4efe-8d24-a09c99072759-1670600365f1cb48de-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "WHOLESALE CONTACT",
+            "button_link": "shopify:\/\/pages\/self-tanning-wholesale",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--17047689756992__858d5f89-92ca-4efe-8d24-a09c99072759-1670600365f1cb48de-0",
+        "template--17047689756992__858d5f89-92ca-4efe-8d24-a09c99072759-1670600365f1cb48de-1",
+        "template--17047689756992__858d5f89-92ca-4efe-8d24-a09c99072759-1670600365f1cb48de-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 56,
+        "padding_bottom": 0
+      }
+    },
+    "8f1ea845-8de2-4532-9c8f-006cf1d6c6f1": {
+      "type": "cta",
+      "disabled": true,
+      "settings": {
+        "img-desktop": "shopify:\/\/shop_images\/peta-jane-beauty--best-self-tanning-products-wholesale.jpg",
+        "vertical-text": "",
+        "title": "INTERESTED IN WHOLESALE?",
+        "url": "https:\/\/petajanebeauty.com\/pages\/self-tanning-wholesale",
+        "label": "WHOLESALE CONTACT",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "fd9c03b2-667c-400a-bd4a-d87db2876fc4": {
+      "type": "faq",
+      "settings": {
+        "faq_background": "#f0e4d7",
+        "main_title": "",
+        "faq_title": "FREQUENTLY ASKED QUESTIONS"
+      }
+    },
+    "a06d283f-3f02-4a81-8d37-5752eec7b8b1": {
+      "type": "inst-block",
+      "blocks": {
+        "2f6a40ee-aaa0-4e94-89fb-292934dc256f": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_10.jpg",
+            "video_link": ""
+          }
+        },
+        "df38fed6-1fc7-4d6c-9845-60697824decd": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_9.jpg",
+            "video_link": ""
+          }
+        },
+        "48454b50-ab24-43ff-9191-3eaced271386": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_8_5.jpg",
+            "video_link": ""
+          }
+        },
+        "33e79871-8fa6-43c8-bd7b-8ce175a67650": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "img": "shopify:\/\/shop_images\/1_4.jpg",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "2f6a40ee-aaa0-4e94-89fb-292934dc256f",
+        "df38fed6-1fc7-4d6c-9845-60697824decd",
+        "48454b50-ab24-43ff-9191-3eaced271386",
+        "33e79871-8fa6-43c8-bd7b-8ce175a67650"
+      ],
+      "settings": {
+        "app": true,
+        "title": "SHOP THE FEED",
+        "subtitle": "GET THE LOOK",
+        "marquee": "AWARD WINNING SELF-TANNERS",
+        "overlay_opacity": 0,
+        "padding_top": 48,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "a5163555-5888-4f8d-8053-8fc3bf66bdca",
+    "858d5f89-92ca-4efe-8d24-a09c99072759",
+    "8f1ea845-8de2-4532-9c8f-006cf1d6c6f1",
+    "fd9c03b2-667c-400a-bd4a-d87db2876fc4",
+    "a06d283f-3f02-4a81-8d37-5752eec7b8b1"
+  ]
+}

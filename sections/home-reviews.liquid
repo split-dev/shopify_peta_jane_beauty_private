@@ -1,0 +1,119 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+  .section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  }
+{%- endstyle -%}
+
+<section class="home-reviews section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="section-title">
+      {% if section.settings.title %}
+        <h2 class="h3 mt-0 color-text text-uppercase text-32px-all">{{ section.settings.title }}</h2>
+      {% endif %}
+    </div>
+  </div>
+  <div class="page-width position-relative">
+    <div class="home-reviews__slider position-relative js-home-reviews-slider-init swiper-container">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <a href="#" class="text-decoration-none  swiper-slide home-reviews__item d-flex flex-column">
+            {% if block.settings.img %}
+              <div class="home-reviews__img w-100 h-100">
+                <img
+                  loading="lazy"
+                  class="{{ block.settings.url }}"
+                  src="{{ block.settings.img | img_url: '442x' }}"
+                  alt="{{ block.settings.img.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div class="home-reviews__text d-flex">
+                <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.63833 20.8683C0.921667 19.045 0 17 0 13.685C0 7.85166 4.095 2.62333 10.05 0.0383301L11.5383 2.335C5.98 5.34166 4.89333 9.24333 4.46 11.7033C5.355 11.24 6.52667 11.0783 7.675 11.185C10.6817 11.4633 13.0517 13.9317 13.0517 17C13.0517 18.5471 12.4371 20.0308 11.3431 21.1248C10.2492 22.2188 8.76543 22.8333 7.21833 22.8333C6.36276 22.8259 5.51723 22.6483 4.73094 22.3109C3.94465 21.9736 3.23331 21.4832 2.63833 20.8683ZM19.305 20.8683C17.5883 19.045 16.6667 17 16.6667 13.685C16.6667 7.85166 20.7617 2.62333 26.7167 0.0383301L28.205 2.335C22.6467 5.34166 21.56 9.24333 21.1267 11.7033C22.0217 11.24 23.1933 11.0783 24.3417 11.185C27.3483 11.4633 29.7183 13.9317 29.7183 17C29.7183 18.5471 29.1038 20.0308 28.0098 21.1248C26.9158 22.2188 25.4321 22.8333 23.885 22.8333C23.0294 22.8259 22.1839 22.6483 21.3976 22.3109C20.6113 21.9736 19.9 21.4832 19.305 20.8683Z" fill="#282119"/>
+                </svg>
+                <div class="text-left color-text text-14px-all">{{ block.settings.text }}</div>
+              </div>
+            {% endif %}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="swiper-reviews-button-prev swiper-nav-prev">{% render 'icon-slider-caret' %}</div>
+    <div class="swiper-reviews-button-next swiper-nav-next">{% render 'icon-slider-caret' %}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Review"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Reviews",
+      "category": "New"
+    }
+  ]
+}
+{% endschema %}

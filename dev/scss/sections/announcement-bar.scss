@@ -1,0 +1,24 @@
+.announcement-bar {
+  &__message {
+    font-family: $font-family-base;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+  }
+  .marquee {
+    overflow: hidden;
+    display: flex;
+    pointer-events: none;
+  }
+
+  .marquee h3{
+    color: $c-text;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: $font-family-base;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 5px 0;
+  }
+}

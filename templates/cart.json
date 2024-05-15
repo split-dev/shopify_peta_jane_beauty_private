@@ -1,0 +1,77 @@
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "2dfca8ad-29df-4ebe-bdf2-203b2c522eba": {
+          "type": "subtotal",
+          "settings": {
+          }
+        },
+        "2d79d346-b3f0-47ba-bdb2-783b259884da": {
+          "type": "buttons",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "2dfca8ad-29df-4ebe-bdf2-203b2c522eba",
+        "2d79d346-b3f0-47ba-bdb2-783b259884da"
+      ],
+      "settings": {
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "084c9f09-6a32-4a50-9beb-f0a04a442304": {
+      "type": "featured-collection-new",
+      "settings": {
+        "collection": "best-self-tanning-products",
+        "title": "SHOP OUR BEST SELLING SELF-TANNERS",
+        "show_secondary_image": false,
+        "enable_quick_add": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "cart-footer",
+    "featured-collection",
+    "084c9f09-6a32-4a50-9beb-f0a04a442304"
+  ]
+}

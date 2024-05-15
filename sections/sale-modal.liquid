@@ -1,0 +1,151 @@
+{% if settings.sale-modal-enable %}
+    <subscripton-modal class="SaleModal sale-modal d-none"
+        id="sale-modal"
+        data-section-id="{{ section.id }}"
+        data-delay="{{ settings.sale_modal_delay }}"
+        data-once-per-session="{{ settings.subscription_sale-modal_once }}"
+        data-is-customer-subscribed="{{ customer.accepts_marketing }}"
+    >
+        <div class="page-width position-relative">
+            <div class="sale-modal__content">
+                <span class="close" data-modal-close>&times;</span>
+                <div class="sale-marquee">
+                    <h3>{{ settings.sale-marquee }}</h3>
+                </div>
+                <div class="sale-modal__wrapper align-items-center d-flex justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-end">
+                            <p class="sale-modal__percent text-center">{{ settings.sale-modal-percent}}</p>
+                            <p class="sale-modal__percent-text text-center">{{ settings.sale-modal-percent-text}}</p>
+                        </div>
+                        {% if settings.sale-modal-button %}
+                        <div class="sale-modal__button-mobile w-100">
+                            <a class="button button__primary w-100" href="{{ settings.sale-modal-button-url}}">{{ settings.sale-modal-button-label}}</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="sale-modal__timer-wrapper d-flex align-items-center">
+                        <p class="text-16px-all color-text m-0 font-weight-semibold">Ends&nbsp;in:</p>
+                        {% comment %}
+                        <p id="demo"></p>
+                        {% endcomment %}
+
+                        {{ settings.sale-modal-date }}
+
+                        {% if settings.sale-modal-button %}
+                        <div class="sale-modal__button">
+                            <a class="button button__primary" href="{{ settings.sale-modal-button-url}}">{{ settings.sale-modal-button-label}}</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </subscripton-modal>
+{% endif %}
+
+{% comment %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set the date we're counting down to
+        var countDownDate = new Date("{{ settings.sale-modal-date }}").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+    
+            // Get today's date and time
+            var now = new Date().getTime();
+    
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+    
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+            // Display the result in the element with id="demo"
+            document.getElementById("demo").innerHTML = days + "d : " + hours + "h : "
+                + minutes + "m : " + seconds + "s";
+    
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector('#sale-modal').classList.add('d-none');
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    });
+</script>
+{% endcomment %}
+
+<script>
+    window.onscroll = function() {showSaleModal()};
+
+    function showSaleModal() {
+        if (document.documentElement.scrollTop > 700) {
+            document.querySelector(".js-sale-modal").classList.add('active');
+        }
+    }
+
+    function MarqueeSale(selector, speed) {
+        const parentSelector = document.querySelector(selector);
+        const clone = parentSelector.innerHTML;
+        const firstElement = parentSelector.children[0];
+        let i = 0;
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+
+        setInterval(function () {
+            firstElement.style.marginLeft = `-${i}px`;
+            if (i > firstElement.clientWidth) {
+                i = 0;
+            }
+            i = i + speed;
+        }, 0);
+    }
+
+    //after window is completed load
+    //1 class selector for marquee
+    //2 marquee speed 0.2
+    window.addEventListener('load', MarqueeSale('.sale-marquee', 0.2))
+
+</script>
+
+
+{% schema %}
+{
+  "name": "Sale Modal",
+  "class": "js-sale-modal",
+  "tag": "section",
+    "settings": [
+    {
+    "type": "header",
+    "content": "Settings",
+    "info": "This section is editable via theme settings under Dropdowns and Pop-Ups"
+    }
+    ],
+  "presets": [
+    {
+      "name": "Sale Modal"
+    }
+  ]
+}
+{% endschema %}

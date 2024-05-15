@@ -1,0 +1,111 @@
+<div class="about__presentation page-width">
+	<div class="about__presentation-inner">
+		{% for block in section.blocks %}
+			{% case block.type %}
+				{% when 'present_block_image' %}
+					<img class="about__presentation-img" src="{{ block.settings.presentation_image | img_url: 'master' }}">
+				{% endcase %}
+		{% endfor %}
+			<div class="about__presentation-text-inner">
+				{% for block in section.blocks %}
+					{% case block.type %}
+						{% when 'present_block_numbers' %}
+							<div class="about__presentation-text-wrap">
+								<div class="about__presentation-text-item">
+									<h3 class="about__presentation-heading">{{ block.settings.presentation_number }}</h3>
+									{{ block.settings.presentation_text }}
+								</div>
+							</div>
+						{% when 'present_block_note' %}
+							<div class="about__presentation-note-inner">
+								<img class="about__presentation-note-icon" src="{{ block.settings.presentation_note_icon | img_url: 'master' }}">
+								{{ block.settings.presentation_note_text }}
+							</div>
+					{% endcase %}
+				{% endfor %}
+			</div>
+	</div>
+</div>
+
+{% schema %}
+{
+  "name": "About Presentation",
+  "tag": "section",
+  "class": "section about",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 10
+    }
+  ],
+  "blocks": [
+		{
+      "name": "Presentation Image",
+      "type": "present_block_image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "presentation_image",
+          "label": "Image"
+        }
+      ]
+    },
+		{
+      "name": "Presentation Numbers",
+      "type": "present_block_numbers",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "presentation_number",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "presentation_text",
+          "label": "Text"
+        }
+      ]
+    },
+		{
+      "name": "Presentation Note",
+      "type": "present_block_note",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "presentation_note_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "presentation_note_text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+	"presets": [
+    {
+      "name": "About Presentation"
+    }
+  ]
+}
+{% endschema %}

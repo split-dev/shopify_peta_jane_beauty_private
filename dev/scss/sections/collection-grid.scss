@@ -1,0 +1,34 @@
+.collection.page-width {
+  #product-grid {
+    padding: 0 63px;
+    @include media-breakpoint-down(sm) {
+      padding: 0 24px;
+    }
+    @include media-breakpoint-down(xs) {
+      padding: 0;
+    }
+  }
+  .grid--2-col-tablet-down .grid__item {
+    @media (max-width: 450px) {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+}
+
+.wholesale-collection-message {
+  width: 100%;
+  margin-top: 32px;
+  padding: 8px 24px;
+  border: solid 1px $c-text;
+  border-radius: 10px;
+  color: $c-text;
+  font-size: 16px;
+  font-weight: 500 !important;
+  @include media-breakpoint-down(xs) {
+    padding: 8px;
+  }
+  a {
+    color: $c-skin;
+  }
+}

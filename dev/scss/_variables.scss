@@ -1,0 +1,22 @@
+:root {
+  --transition-default: 300ms;
+}
+
+// Type
+$font-family-base: var(--font-body-family);
+$headings-font-family: var(--font-heading-family);
+
+// Colors
+$c-skin: c_rgb(var(--color-base-accent-1));
+$c-footer: c_rgb(var(--color-base-accent-2));
+$c-white: c_rgb(var(--color-base-background-1));
+$c-text: c_rgb(var(--color-base-text));
+$c-alpha: c_rgba(var(--color-button), var(--alpha-button-background));
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 750px,
+  lg: 990px,
+  xl: 1500px,
+);
+

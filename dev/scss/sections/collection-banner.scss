@@ -1,0 +1,130 @@
+.collection-banner {
+  .apply__video-image {
+    border-radius: 0 !important;
+    @include media-breakpoint-down(sm) {
+      max-height: 450px;
+      width: 100%;
+      border-radius: 10px 10px 0 0 !important;
+    }
+  }
+  .js-marquee-video {
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    background-color: $c-text;
+    pointer-events: none;
+    width: 24px;
+    right: 0;
+    @include media-breakpoint-down(sm) {
+      display: none !important;
+    }
+    p {
+      color: #fff;
+      font-weight: 400;
+      font-size: 10px;
+      white-space: nowrap;
+      font-family: $font-family-base;
+      line-height: 220%;
+      margin: 5px 0;
+      writing-mode: tb-rl;
+      transform: rotate(180deg);
+      @include media-breakpoint-down(sm) {
+        transform: rotate(0deg);
+        writing-mode: horizontal-tb;
+        width: 100%;
+      }
+    }
+  }
+  .js-marquee-video-mob {
+    display: none;
+    background-color: $c-footer;
+    @include media-breakpoint-down(sm) {
+      display: flex;
+    }
+    p {
+      color: $c-text;
+      font-weight: 400;
+      font-size: 10px;
+      white-space: nowrap;
+      font-family: $font-family-base;
+      line-height: 220%;
+      margin: 5px 0;
+      writing-mode: tb-rl;
+      transform: rotate(180deg);
+      @include media-breakpoint-down(sm) {
+        transform: rotate(0deg);
+        writing-mode: horizontal-tb;
+        width: 100%;
+      }
+    }
+  }
+  &__wrapper {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: #E2DACF;
+    min-height: 430px;
+    @include media-breakpoint-down(sm) {
+      border-radius: 0;
+      min-height: auto;
+      flex-direction: column;
+      border: none;
+      background: transparent !important;
+    }
+  }
+  &__content {
+    flex: 0 0 50%;
+    position: relative;
+    @include media-breakpoint-down(sm) {
+      flex: 0 0 100%;
+      flex-direction: column;
+    }
+  }
+  &__media {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+    @include media-breakpoint-down(sm) {
+      flex: 0 0 100%;
+      max-height: 481px;
+    }
+    &-image {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      
+    }
+  }
+  &__content-text {
+    width: 100%;
+    padding: 35px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include media-breakpoint-down(sm) {
+      padding: 0 0 15px 0;
+    }
+    h1 {
+      font-family: $headings-font-family;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 0 !important;
+        text-align: center;
+      }
+    }
+  }
+  &__text {
+    margin-top: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $c-text;
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  }
+}

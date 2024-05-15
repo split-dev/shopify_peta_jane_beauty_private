@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-account",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "5c68793b-1fc5-4452-a930-3c29c1324e7a": {
+      "type": "wholesale-rich-text",
+      "blocks": {
+        "template--16967055802688__5c68793b-1fc5-4452-a930-3c29c1324e7a-1670849624c1dffbb9-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><a href=\"https:\/\/petajanebeauty.com\/collections\/peta-jane-beauty-wholesale-self-tanning\" title=\"https:\/\/petajanebeauty.com\/collections\/peta-jane-beauty-wholesale-self-tanning\">WHOLESALERS & DISTRIBUTORS<\/a><\/p>"
+          }
+        },
+        "template--16967055802688__5c68793b-1fc5-4452-a930-3c29c1324e7a-1670849624c1dffbb9-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "WHOLESALE SHOP",
+            "button_link": "shopify:\/\/collections\/peta-jane-beauty-wholesale-self-tanning",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16967055802688__5c68793b-1fc5-4452-a930-3c29c1324e7a-1670849624c1dffbb9-1",
+        "template--16967055802688__5c68793b-1fc5-4452-a930-3c29c1324e7a-1670849624c1dffbb9-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 24,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5c68793b-1fc5-4452-a930-3c29c1324e7a"
+  ]
+}

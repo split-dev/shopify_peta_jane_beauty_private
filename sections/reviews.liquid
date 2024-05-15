@@ -1,0 +1,26 @@
+
+<section class="reviews">
+  <div class="page-width">
+    <h1 class="reviews__title">{{ section.settings.reviews_title }}</h1>
+    {% render 'okendo-reviews-widget', product: product %}
+  </div>
+</section>
+
+
+{% schema %}
+  {
+  "name": "Reviews App",
+  "settings": [
+    {
+      "type": "text",
+      "id": "reviews_title",
+      "label": "Reviews title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews App"
+    }
+  ]
+}
+{% endschema %}

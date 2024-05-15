@@ -1,0 +1,25 @@
+.icon-list {
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0 -16px;
+        @include media-breakpoint-up(sm) {
+            margin: 0 -24px;
+        }
+        img {
+            display: block;
+            object-fit: contain;
+            max-height: 160px;
+            height: auto;
+            max-width: 25%;
+            padding: 0 16px;
+            margin-bottom: 10px;
+            @include media-breakpoint-up(sm) {
+                padding: 0 24px;
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

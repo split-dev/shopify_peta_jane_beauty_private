@@ -1,0 +1,86 @@
+{
+  "sections": {
+    "72b2eb37-7a8a-491d-8fc1-6f5fa9502634": {
+      "type": "top-banner",
+      "settings": {
+        "img-desktop": "shopify:\/\/shop_images\/Rectangle_86_1_1.jpg",
+        "img-mobile": "shopify:\/\/shop_images\/Rectangle_86_2_1.jpg",
+        "title": "&nbsp;",
+        "text": "<p><\/p>",
+        "enable-overlay": false
+      }
+    },
+    "main": {
+      "type": "main-page-shipping",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "97922e32-f091-431b-a189-a2f9b55ca9fa": {
+      "type": "featured-collection-new",
+      "settings": {
+        "collection": "best-self-tanning-products",
+        "title": "SHOP OUR BEST SELLING SELF-TANNERS",
+        "show_secondary_image": true,
+        "enable_quick_add": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "64f63d0d-7c1e-4c83-812d-c7d435c4e426": {
+      "type": "inst-block",
+      "blocks": {
+        "230f478e-6255-4822-a5a2-540c8fac5706": {
+          "type": "text",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_10.jpg",
+            "video_link": ""
+          }
+        },
+        "3b35850c-2669-4211-a574-4601abba9075": {
+          "type": "text",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_9.jpg",
+            "video_link": ""
+          }
+        },
+        "de994757-b247-44c5-924d-a9bf8bcba2b0": {
+          "type": "text",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_8_5.jpg",
+            "video_link": ""
+          }
+        },
+        "2954efd0-3d49-4dbc-a471-8d325ce29381": {
+          "type": "text",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/1_4.jpg",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "230f478e-6255-4822-a5a2-540c8fac5706",
+        "3b35850c-2669-4211-a574-4601abba9075",
+        "de994757-b247-44c5-924d-a9bf8bcba2b0",
+        "2954efd0-3d49-4dbc-a471-8d325ce29381"
+      ],
+      "settings": {
+        "app": true,
+        "title": "Shop the feed",
+        "subtitle": "GET THE LOOK",
+        "marquee": "  Be part of us   ",
+        "overlay_opacity": 0,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "72b2eb37-7a8a-491d-8fc1-6f5fa9502634",
+    "main",
+    "97922e32-f091-431b-a189-a2f9b55ca9fa",
+    "64f63d0d-7c1e-4c83-812d-c7d435c4e426"
+  ]
+}

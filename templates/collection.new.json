@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "2168d141-1dad-4cc1-bb46-ff747b6f97ed": {
+      "type": "collection-banner",
+      "settings": {
+        "title": "SHOP THE #1 RATED SUNLESS TANNERS",
+        "text": "",
+        "marquee": "SHOP NOW              ",
+        "block_bg": "#e2dacf",
+        "video_link": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "c90f56ee-60aa-493b-9636-e28f0489aa8b": {
+      "type": "collection-nav",
+      "settings": {
+        "menu": "collections-list",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 8
+      }
+    },
+    "db437611-fe99-4d99-9f08-9fbe2fbfa4f0": {
+      "type": "faq-category",
+      "settings": {
+        "faq_background": "#f0e4d7",
+        "main_title": "",
+        "faq_title": "FAQ"
+      }
+    }
+  },
+  "order": [
+    "2168d141-1dad-4cc1-bb46-ff747b6f97ed",
+    "c90f56ee-60aa-493b-9636-e28f0489aa8b",
+    "product-grid",
+    "db437611-fe99-4d99-9f08-9fbe2fbfa4f0"
+  ]
+}

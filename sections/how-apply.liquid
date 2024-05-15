@@ -1,0 +1,258 @@
+<style>
+
+.apply__wrapper-left {
+  flex-direction: row-reverse;
+}
+.apply__inner {
+  background-color: {{ section.settings.block_bg }};
+} 
+
+</style>
+
+
+{%- if section.settings.img_first != blank -%}
+<section class="apply">
+  <div class="page-width">
+    {% if section.settings.apply_title %}
+      <h1 class="apply__title">{{ section.settings.apply_title }}</h1>
+    {% endif %}
+    <div class="apply__wrapper {% if section.settings.wrapper_rotate == 'left' %} apply__wrapper-left {% endif %}">
+      <div class="apply__inner">
+
+        <div class="apply__image">
+          <div class="apply__image-item">
+            <img src="{{ section.settings.img_second | img_url: 'master' }}">
+          </div>
+          <div class="apply__image-item">
+            <img id="mainImg" src="{{ section.settings.img_first | img_url: 'master' }}">
+          </div>
+          <input class="apply__input" type="range" min="0" max="100" value="50" id="apply_slider" oninput="drag()">
+        </div>
+
+        <div class="apply__drag">
+          <span>{{ section.settings.image_text }}</span>
+        </div>
+
+        <div class="buy__buttons" {{ block.shopify_attributes }}>
+            <product-form class="product-form">
+              <div class="product-form__error-message-wrapper" role="alert" hidden>
+                <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        class="icon icon-error"
+                        viewBox="0 0 13 13"
+                >
+                  <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+                  <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+                  <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+                  <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+                </svg>
+                <span class="product-form__error-message"></span>
+              </div>
+
+              {%- form 'product',
+                product,
+                id: product_form_id,
+                class: 'form',
+                novalidate: 'novalidate',
+                data-type: 'add-to-cart-form'
+              -%}
+                <input
+                        type="hidden"
+                        name="id"
+                        value="{{ product.selected_or_first_available_variant.id }}"
+                        disabled
+                >
+                <div class="product-form__buttons">
+                  <button
+                          type="submit"
+                          name="add"
+                          class="product-form__submit product__button button button--full-width {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+                          {% if product.selected_or_first_available_variant.available == false %}
+                            disabled
+                          {% endif %}
+                  >
+                    <span>
+                      {%- if product.selected_or_first_available_variant.available -%}
+                        {{ 'products.product.add_to_cart' | t }}
+                      {%- else -%}
+                        {{ 'products.product.sold_out' | t }}
+                      {%- endif -%}
+                    </span>
+                    <div class="loading-overlay__spinner hidden">
+                      <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              class="spinner"
+                              viewBox="0 0 66 66"
+                              xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                      </svg>
+                    </div>
+                  </button>
+                  {%- if block.settings.show_dynamic_checkout -%}
+                    {{ form | payment_button }}
+                  {%- endif -%}
+                </div>
+              {%- endform -%}
+            </product-form>
+
+            {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
+
+            {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+              | where: 'pick_up_enabled', true
+            -%}
+
+            <pickup-availability
+                    class="product__pickup-availabilities no-js-hidden quick-add-hidden"
+                    {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %}
+                      available
+                    {% endif %}
+                    data-root-url="{{ routes.root_url }}"
+                    data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                    data-has-only-default-variant="{{ product.has_only_default_variant }}"
+            >
+              <template>
+                <pickup-availability-preview class="pickup-availability-preview">
+                  {% render 'icon-unavailable' %}
+                  <div class="pickup-availability-info">
+                    <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
+                    <button class="pickup-availability-button link link--text underlined-link">
+                      {{ 'products.product.pickup_availability.refresh' | t }}
+                    </button>
+                  </div>
+                </pickup-availability-preview>
+              </template>
+            </pickup-availability>
+        </div>
+                          
+      </div>
+      <div class="apply__video">
+        {% if section.settings.video_link != blank %}
+          <div class="poster" data-bg="{{ section.settings.video_image | img_url: 'master' }}">
+            <a
+              class="iframe-lightbox-custom"
+              href="{{ section.settings.video_link }}">
+              {% render 'icon-play' %}
+            </a>
+          </div>
+          <div class="apply__video-overlay" style="opacity: 0.{{ section.settings.overlay_opacity }}"></div>
+          {% else %}
+          {% if section.settings.img_third != blank %}
+            <img class="apply__video-image" src="{{ section.settings.img_third | image_url: width: 800 }}">
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+
+
+<script>
+
+
+const video = document.querySelector('.apply__video video');
+const videoPlay = document.querySelector('.apply__video svg');
+const videoOverlay = document.querySelector('.apply__video-overlay');
+
+
+if (video) {
+  videoPlay.addEventListener('click', function() {
+    videoPlay.classList.add('hide');
+    videoOverlay.classList.add('hide');
+    video.setAttribute('controls', 'true')
+    video.play();
+  })
+}
+
+function drag() {
+  let imageValue = document.getElementById('apply_slider').value;
+  document.getElementById('mainImg').style.clipPath = "polygon(0 0," + imageValue + "% 0," + imageValue + "% 100%, 0 100%)";
+  document.getElementById('mainImg').style.webkitClipPath = "polygon(0 0," + imageValue + "% 0," + imageValue + "% 100%, 0 100%)";
+}
+
+</script>
+
+
+
+{% schema %}
+  {
+  "name": "How to apply",
+  "settings": [
+    {
+      "type": "text",
+      "id": "apply_title",
+      "label": "Title",
+      "default": "how to apply"
+    },
+    {
+      "type": "color",
+      "id": "block_bg",
+      "label": "Block background",
+      "default": "#FAF6F1"
+    },
+    {
+      "type": "select",
+      "id": "wrapper_rotate",
+      "label": "Rotation content",
+      "options": [
+        {
+          "value": "left",
+          "label": "Rotate left"
+        },
+        {
+          "value": "right",
+          "label": "Rotate right"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "img_first",
+      "label": "Image before"
+    },
+    {
+      "type": "text",
+      "id": "image_text",
+      "label": "Image text"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_second",
+      "label": "Image after"
+    },
+    {
+      "type": "url",
+      "id": "video_link",
+      "label": "Video link"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_image",
+      "label": "Video image"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_third",
+      "label": "Image third"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 99,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "How to apply"
+    }
+  ]
+}
+{% endschema %}

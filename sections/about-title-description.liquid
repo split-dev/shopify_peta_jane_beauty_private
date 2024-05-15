@@ -1,0 +1,28 @@
+<div class="page-width page-width--narrow">
+  <h1 class="page-title about__title">
+    {{ page.title | escape }}
+  </h1>
+	<div class="about__short-text">
+		{{ section.settings.description }}
+	</div>
+</div>
+
+{% schema %}
+{
+  "name": "About Title & Description",
+  "tag": "section",
+  "class": "section about",
+  "settings": [
+		{
+			"type": "richtext",
+			"id": "description",
+			"label": "Short Description"
+    }
+  ],
+	"presets": [
+    {
+      "name": "About Title & Description"
+    }
+  ]
+}
+{% endschema %}

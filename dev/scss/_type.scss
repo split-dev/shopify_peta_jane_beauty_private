@@ -1,0 +1,197 @@
+.text-56px {
+  @include text-48px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-56px;
+  }
+}
+
+.text-52px {
+  @include text-32px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-52px;
+  }
+}
+
+.text-48px {
+  @include text-32px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-48px;
+  }
+}
+
+.text-44px {
+  @include text-44px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-26px;
+  }
+}
+
+.text-40px {
+  @include text-24px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-40px
+  }
+}
+
+.text-36px {
+  @include text-24px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-36px
+  }
+}
+
+.text-32px {
+  @include text-24px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-32px
+  }
+}
+
+.text-32px-all {
+  @include text-32px
+}
+
+.text-26px-all {
+  @include text-26px;
+}
+
+.text-26px {
+  @include text-24px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-26px;
+  }
+}
+
+.text-24px {
+  @include text-18px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-24px;
+  }
+}
+
+.text-24px-all {
+  @include text-24px;
+}
+
+.text-22px-all {
+  @include text-22px;
+}
+
+.text-21px-all {
+  @include text-21px;
+}
+
+.text-20px {
+  @include text-18px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-20px;
+  }
+}
+
+.text-18px-all {
+  @include text-18px;
+}
+
+.text-18px {
+  @include text-16px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-18px;
+  }
+}
+
+.text-17px {
+  @include text-17px;
+}
+
+.text-16px-all {
+  @include text-16px;
+}
+
+.text-16px {
+  @include text-14px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-16px;
+  }
+}
+
+.text-14px {
+  @include text-12px;
+  @include media-breakpoint-up(sm) {
+    @include text-14px;
+  }
+}
+
+.text-14px-all {
+  @include text-14px;
+}
+
+.text-12px {
+  @include text-12px;
+}
+
+.text-11px {
+  @include text-11px;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.font-weight-semibold {
+  font-weight: 600;
+}
+
+.color-text {
+  color: $c-text;
+}
+
+.h1 {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 83px;
+  @include media-breakpoint-down(xs) {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 138.7%;
+  }
+}
+
+.h2 {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 64px;
+  @include media-breakpoint-down(xs) {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 138.7%;
+  }
+}
+
+.h3 {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 120%;
+  @include media-breakpoint-down(xs) {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+  }
+}
+.font-heading {
+  font-family: $headings-font-family;
+}
+.font-body {
+  font-family: $font-family-base;
+}

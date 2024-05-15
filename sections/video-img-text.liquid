@@ -1,0 +1,313 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+  .section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  }
+{%- endstyle -%}
+
+<style>
+  .video-img-text__wrapper {
+    background-color: {{ section.settings.block_bg }};
+  }
+</style>
+
+<section class="video-img-text section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="video-img-text__wrapper d-flex">
+      <div class="video-img-text__media">
+        {% if section.settings.video_link != blank %}
+          <div class="poster" style="background-image: url({{ section.settings.video_image | img_url: 'master' }})">
+            <a
+              class="iframe-lightbox-custom"
+              href="{{ section.settings.video_link }}"
+              data-padding-bottom="56.25%"
+            >
+              {% render 'icon-play' %}
+            </a>
+          </div>
+          <div class="apply__video-overlay" style="opacity: 0.{{ section.settings.overlay_opacity }}"></div>
+        {% else %}
+          <img class="apply__video-image" src="{{ section.settings.img_third | image_url: width: 1000 }}">
+        {% endif %}
+      </div>
+      <div class="video-img-text__content d-flex">
+        {%- if section.settings.marquee != blank -%}
+          <div class="js-marquee-video" aria-hidden="true">
+            <p>{{ section.settings.marquee }}</p>
+          </div>
+          <div class="js-marquee-video-mob" aria-hidden="true">
+            <p>{{ section.settings.marquee }}</p>
+          </div>
+        {%- endif -%}
+        <div class="video-img-text__content-text">
+          {%- if section.settings.title -%}
+            <h3 class="m-0 text-48px color-text text-uppercase">{{ section.settings.title }}</h3>
+          {%- endif -%}
+          <div>
+            <div class="video-img-text__text">
+              {% if section.settings.text %}
+                {{ section.settings.text }}
+              {% endif %}
+              {% for block in section.blocks %}
+                <div class="video-img-text__block-item d-flex align-items-center">
+                  {% if block.settings.svg %}
+                    <div class="video-img-text__svg">
+                      {{ block.settings.svg }}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.text != blank %}
+                    <p>{{ block.settings.text }}</p>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+            <div class="video-img-text__button d-flex">
+              <a class="button button__primary" href="{{ section.settings.button-url }}">
+                {{- section.settings['button-text'] -}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  
+  
+  {% comment %}
+  document.addEventListener('DOMContentLoaded', () => {
+    checkMediaQuery();
+  });
+
+  function checkMediaQuery() {
+    let VideoBlock = document.querySelector('.video-img-text__wrapper').clientHeight;
+    let Ticker = document.querySelector('.js-marquee-video');
+    // If the inner width of the window is greater then 989px
+    if (window.innerWidth > 989) {
+      Ticker.style.maxHeight = `${VideoBlock}px`;
+    } else {
+      Ticker.style.maxHeight = `22px`;
+    }
+  }
+
+  // Add a listener for when the window resizes
+  window.addEventListener('resize', checkMediaQuery);
+  {% endcomment %}
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.video-img-text__media video') != null) {
+      const video = document.querySelector('.video-img-text__media video');
+      const videoPlay = document.querySelector('.video-img-text__media svg');
+      const videoOverlay = document.querySelector('.apply__video-overlay');
+
+      videoPlay.addEventListener('click', function() {
+        videoPlay.classList.add('hide');
+        videoOverlay.classList.add('hide');
+        video.setAttribute('controls', 'true')
+        video.play();
+      })
+    }
+  });
+
+  function MarqueeVideo(selector, speed) {
+    const parentSelector = document.querySelector(selector);
+    const clone = parentSelector.innerHTML;
+    const firstElement = parentSelector.children[0];
+    let i = 0;
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+
+    setInterval(function () {
+      firstElement.style.marginTop = `-${i}px`;
+      if (i > firstElement.clientHeight) {
+        i = 0;
+      }
+      i = i + speed;
+    }, 0);
+  }
+
+  window.addEventListener('load', MarqueeVideo('.js-marquee-video', 0.2))
+
+  function MarqueeVideoMob(selector, speed) {
+    const parentSelector = document.querySelector(selector);
+    const clone = parentSelector.innerHTML;
+    const firstElement = parentSelector.children[0];
+    let i = 0;
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+
+    setInterval(function () {
+      firstElement.style.marginLeft = `-${i}px`;
+      if (i > firstElement.clientWidth) {
+        i = 0;
+      }
+      i = i + speed;
+    }, 0);
+  }
+
+  window.addEventListener('load', MarqueeVideoMob('.js-marquee-video-mob', 0.1))
+
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Video or Image and Text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "CONTENT"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button-url",
+      "label": "URL button"
+    },
+    {
+      "type": "text",
+      "id": "marquee",
+      "default": "•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;you are beautiful&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "label": "Tiсker text"
+    },
+    {
+      "type": "header",
+      "content": "MEDIA"
+    },
+    {
+      "type": "color",
+      "id": "block_bg",
+      "label": "Background Color",
+      "default": "#FAF6F1"
+    },
+    {
+      "type": "url",
+      "id": "video_link",
+      "label": "Video link"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_image",
+      "label": "Video Poster"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_third",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 99,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "text",
+      "settings": [
+        {
+          "type": "html",
+          "id": "svg",
+          "label": "SVG"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video or Image and Text",
+      "category": "New"
+    }
+  ]
+}
+{% endschema %}

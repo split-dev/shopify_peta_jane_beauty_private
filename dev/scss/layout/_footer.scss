@@ -1,0 +1,197 @@
+.footer {
+  background-color: $c-footer;
+  border-radius: 40px 40px 0 0;
+  padding: 40px 0 35px;
+  margin-top: 90px;
+  @include media-breakpoint-down(xs) {
+    padding: 27px 0 40px;
+    margin-top: 32px;
+  }
+  &__wrapper {
+    justify-content: space-between;
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+    }
+  }
+  &__bottom {
+    margin-top: 8px;
+    @include media-breakpoint-down(sm) {
+      margin-top: 20px;
+    }
+    p {
+      opacity: 0.5;
+    }
+  }
+  &__logo {
+    width: 180px;
+    min-width: 180px;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 26px;
+    }
+  }
+  &__logo-position {
+    max-width: 180px;
+    svg {
+      max-width: 180px;
+      @include media-breakpoint-down(xs) {
+        max-width: 101px;
+      }
+    }
+  }
+  &__social {
+    margin-top: 16px;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+    path {
+      transition: 0.3s;
+    }
+    li {
+      margin-right: 9px;
+      &:hover {
+        path {
+          fill: $c-skin !important;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__social-mobile {
+    display: none;
+    @include media-breakpoint-down(sm) {
+      display: flex !important;
+    }
+  }
+  &__menu {
+    width: 100%;
+  }
+  &__list {
+    padding-left: 90px;
+    @media (max-width: 1400px) {
+      padding-left: 10%;
+    }
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+      padding-right: 32px;
+    }
+    &:last-child {
+      @include media-breakpoint-down(sm) {
+        padding-right: 0;
+      }
+    }
+    ul {
+      list-style: none;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 20px !important;
+      }
+      li {
+        margin-bottom: 10px;
+        a {
+          transition: 0.3s;
+          &:hover {
+            color: $c-skin !important;
+          }
+        }
+      }
+    }
+  }
+  &__form {
+    width: 402px;
+    min-width: 402px;
+    margin-left: 24px;
+    @media (max-width: 1150px) {
+      width: 302px;
+      min-width: 302px;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      min-width: 100%;
+      margin-left: 0;
+    }
+    form {
+      label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #4D4D4D;
+        top: 17px;
+        @include media-breakpoint-down(xs) {
+          top: 11px;
+          font-size: 12px;
+        }
+      }
+      input {
+        border: 1px solid $c-text !important;
+        border-radius: 30px 0 0 30px !important;
+        background: transparent !important;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #4D4D4D;
+        outline: none;
+        box-shadow: none;
+        height: 54px;
+        margin: 0 !important;
+        @include media-breakpoint-down(xs) {
+          height: 42px;
+        }
+        &:focus,
+        &:active {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+      button {
+        margin: 0;
+        margin-left: -1px !important;
+        border-radius: 0 30px 30px 0 !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        @include media-breakpoint-down(xs) {
+          font-size: 14px !important;
+          height: 42px;
+          min-height: 40px;
+        }
+        &:before {
+          content: none;
+          display: none !important;
+        }
+        &:after {
+          content: none;
+          display: none !important;
+        }
+      }
+      .footer__form-box {
+        &:before {
+          content: none;
+          display: none !important;
+        }
+        &:after {
+          content: none;
+          display: none !important;
+        }
+      }
+    }
+  }
+  &__form-text {
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    line-height: 150%;
+    margin-bottom: 24px;
+    @include media-breakpoint-down(sm) {
+      font-weight: bold !important;
+    }
+    @include media-breakpoint-down(xs) {
+      font-size: 10px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}

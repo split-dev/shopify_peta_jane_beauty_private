@@ -1,0 +1,31 @@
+.about{
+	&__title{
+		font-size: 48px;
+		line-height: 120%;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+	}
+	&__short-text{
+		font-size: 14px;
+		line-height: 150%;
+		color: #282119;
+		margin-bottom: 55px;
+	}
+}
+@media screen and (max-width: 990px) {
+	.about{
+		&__title{
+			font-size: 32px;
+			margin-top: 0px;
+			margin-bottom: 30px;
+		}
+		&__short-text {
+			font-size: 12px;
+			margin-bottom: 30px;
+		}
+		&__short-text p{
+			margin-top: 4px;
+		}
+	}
+}

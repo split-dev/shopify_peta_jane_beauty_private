@@ -1,0 +1,113 @@
+.about{
+	&__presentation{
+		margin-bottom: 60px;
+	}
+	&__presentation-inner{
+		display: flex;
+		align-items: center;
+		column-gap: 30px;
+	}
+	&__presentation-text-inner{
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 23px;
+	}
+	&__presentation-img{
+		border-radius: 10px;
+		max-width: 678px;
+		max-height: 378px;
+		object-fit: cover;
+	}
+	&__presentation-text-wrap{
+		flex: 1 1 50%;
+	}
+	&__presentation-text-item{
+		max-width: 240px;
+		font-size: 14px;
+		text-align: center;
+		color: #282119;
+	}
+	&__presentation-heading{
+		font-size: 48px;
+		text-align: center;
+		color: #282119;
+		margin: 6px 0;
+	}
+	&__presentation-note-inner{
+		display: flex;
+		column-gap: 15px;
+		font-size: 12px;
+		line-height: 18px;
+		color: #282119;
+		padding: 20px 23px;
+		border: 1px solid #282119;
+		border-radius: 10px;
+	}
+	&__presentation-note-icon{
+		height: max-content;
+	}
+	&__presentation-note-inner p{
+		margin: 0;
+	}
+}
+@media screen and (max-width: 1290px) {
+	.about{
+		&__presentation-inner{
+			flex-direction: column;
+		}
+		&__presentation-text-inner {
+			max-width: 678px;
+		}
+		&__presentation-img {
+			margin-bottom: 35px;
+		}
+	}
+}
+@media screen and (max-width: 990px) {
+	.about{
+		&__presentation {
+			margin-bottom: 26px;
+		}
+		&__presentation-img{
+			width: 100%;
+			margin-bottom: 14px;
+		}
+		&__presentation-heading{
+			font-size: 32px;
+		}
+	}
+}
+@media screen and (max-width: 575px) {
+	.about{
+		&__presentation-text-inner{
+			column-gap: 60px;
+		}
+		&__presentation-text-inner &__presentation-text-wrap:nth-child(odd){
+			flex-basis: auto;
+		}
+		&__presentation-text-item{
+			max-width: none;
+		}
+		&__presentation-text-inner &__presentation-text-wrap:nth-child(odd) &__presentation-heading,
+		&__presentation-text-inner &__presentation-text-wrap:nth-child(odd) &__presentation-text-item{
+			text-align: left;
+		}
+		&__presentation-note-inner{
+			font-size: 10px;
+			padding: 20px 10px 14px 10px;
+		}
+	}
+}
+@media screen and (max-width: 381px) {
+	.about{
+		&__presentation-text-wrap {
+			flex: auto;
+		}
+		&__presentation-text-inner{
+			min-width: 335px;
+		}
+		&__presentation-text-inner {
+			column-gap: 0px;
+		}
+	}
+}

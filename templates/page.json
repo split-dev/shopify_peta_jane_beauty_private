@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "7e39c18f-42aa-438f-9a5a-1be42efee342": {
+      "type": "faq-old",
+      "disabled": true,
+      "settings": {
+        "faq_background": "#F0E4D7",
+        "main_title": "",
+        "faq_title": "FAQ"
+      }
+    },
+    "3743be6e-5047-44b4-9acb-cb8830a2f6f5": {
+      "type": "faq",
+      "settings": {
+        "faq_background": "#F0E4D7",
+        "main_title": "",
+        "faq_title": "FAQ"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "7e39c18f-42aa-438f-9a5a-1be42efee342",
+    "3743be6e-5047-44b4-9acb-cb8830a2f6f5"
+  ]
+}

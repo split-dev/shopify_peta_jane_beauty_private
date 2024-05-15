@@ -1,0 +1,24 @@
+.register__title {
+  font-family: $headings-font-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #282119;
+  margin-bottom: 0px;
+  @include media-breakpoint-down(sm) {
+    font-size: 32px;
+  }
+}
+.register__subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #282119;
+  margin-bottom: 20px;
+  @include media-breakpoint-down(sm) {
+    font-size: 12px;
+  }
+}

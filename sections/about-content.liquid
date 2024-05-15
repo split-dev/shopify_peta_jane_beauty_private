@@ -1,0 +1,38 @@
+<div class="about__content rte page-width page-width--narrow">
+	{{ page.content }}
+</div>
+
+{% schema %}
+{
+  "name": "About Content",
+  "tag": "section",
+  "class": "section about",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 10
+    }
+  ],
+	"presets": [
+    {
+      "name": "About Content"
+    }
+  ]
+}
+{% endschema %}

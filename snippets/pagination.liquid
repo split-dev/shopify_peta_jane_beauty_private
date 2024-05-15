@@ -1,0 +1,57 @@
+{% comment %}
+    Renders a set of links for paginated results. Must be used within paginate tags.
+
+    Usage:
+    {% paginate results by 2 %}
+      {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
+    {% endpaginate %}
+
+    Accepts:
+    - paginate: {Object}
+    - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'component-pagination.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-pagination.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- if paginate.parts.size > 0 -%}
+  <div class="pagination-wrapper">
+    <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+      <ul class="pagination__list list-unstyled" role="list">
+      {%- if paginate.previous -%}
+        <li>
+          <a href="{{ paginate.previous.url }}{{ anchor }}" class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce" aria-label="{{ 'general.pagination.previous' | t }}">
+              <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.75268 1.34167C9.57873 1.14135 9.33191 1.01867 9.06677 1.00073C8.802 0.98315 8.54089 1.07177 8.34167 1.24719L0.341797 8.24694C0.124268 8.43701 -0.000244141 8.7113 -0.000244141 8.99987C-0.000244141 9.28845 0.124268 9.56311 0.341797 9.7528L8.34167 16.7529C8.75732 17.1166 9.3894 17.0741 9.75268 16.6581C10.1163 16.2424 10.0739 15.6107 9.6582 15.2471L2.51855 8.99987L9.65857 2.75305C10.0742 2.3894 10.1163 1.75732 9.75268 1.34167Z" fill="black"/>
+              </svg>
+          </a>
+        </li>
+      {%- endif -%}
+
+      {%- for part in paginate.parts -%}
+        <li>
+          {%- if part.is_link -%}
+            <a href="{{ part.url }}{{ anchor }}" class="pagination__item link" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</a>
+          {%- else -%}
+            {%- if part.title == paginate.current_page -%}
+              <a role="link" aria-disabled="true" class="pagination__item pagination__item--current light" aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</a>
+            {%- else -%}
+              <span class="pagination__item">{{ part.title }}</span>
+            {%- endif -%}
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+
+      {%- if paginate.next -%}
+        <li>
+          <a href="{{ paginate.next.url }}{{ anchor }}" class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce" aria-label="{{ 'general.pagination.next' | t }}" >
+              <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.65832 0.247188C1.24231 -0.11646 0.610592 -0.0739789 0.246944 0.34167C-0.116337 0.757686 -0.0738569 1.3894 0.341793 1.75305L7.48144 7.99987L0.341426 14.2471C-0.0745892 14.6107 -0.116703 15.2424 0.246578 15.6581C0.610225 16.0741 1.24194 16.1166 1.65795 15.7529L9.65783 8.7528C9.875 8.56311 9.99951 8.28845 9.99951 7.99987C9.99951 7.7113 9.875 7.43701 9.65783 7.24694L1.65832 0.247188Z" fill="black"/>
+              </svg>
+          </a>
+        </li>
+      {%- endif -%}
+      </ul>
+    </nav>
+  </div>
+{%- endif -%}

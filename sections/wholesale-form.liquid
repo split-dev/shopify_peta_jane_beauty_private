@@ -1,0 +1,371 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="title text-48px color-text mb-3 text-uppercase text-center title-wrapper--no-top-margin {{ section.settings.heading_size }}">
+        {{ section.settings.heading | escape }}
+      </h2>
+      <p class="color-text text-14px-all text-center mb-4">{{ section.settings.subheading }}</p>
+    {%- else -%}
+      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+    {%- endif -%}
+
+    {% form 'customer', class: 'wholesale-form', id: 'form-wholesale' %}
+      <input type="hidden" name="contact[tags]" value="wholesale_request, wholesale">
+      <div class="newsletter-form__field-wrapper p-1 {% if form.posted_successfully? %} hidden {% endif %}">
+        <span class="login__input-name">{{ 'customer.register.first_name' | t }}</span>
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="ContactForm-first_name"
+            name="contact[first_name]"
+            value=""
+            aria-required="true"
+            placeholder="First Name"
+            required
+          >
+          <label class="field__label" for="ContactForm-first_name">{{ 'customer.register.first_name' | t }}</label>
+        </div>
+        <span class="login__input-name">{{ 'customer.register.last_name' | t }}</span>
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="ContactForm-last_name"
+            name="contact[last_name]"
+            value=""
+            aria-required="true"
+            placeholder="Last Name"
+            required
+          >
+          <label class="field__label" for="ContactForm-last_name">{{ 'customer.register.last_name' | t }}</label>
+        </div>
+        <span class="login__input-name">{{ 'wholesale.phone' | t }}</span>
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="tel"
+            type="text"
+            id="ContactForm-phone"
+            name="contact[note][{{ 'wholesale.phone' | t }}]"
+            pattern="[0-9\-]*"
+            value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+            aria-required="true"
+            placeholder="Phone Number"
+            required
+          >
+          <label class="field__label" for="ContactForm-phone">{{ 'wholesale.phone' | t }}</label>
+        </div>
+        <span class="login__input-name">{{ 'customer.login_page.email' | t }}</span>
+        <div class="field">
+          <input
+            id="wholesaleForm--{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            class="field__input"
+            value="{{ form.email }}"
+            aria-required="true"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="wholesale-error--{{ section.id }}"
+            {% elsif form.posted_successfully? %}
+              aria-describedby="wholesale-success--{{ section.id }}"
+            {% endif %}
+            placeholder="{{ 'newsletter.label' | t }}"
+            required
+          >
+          <label class="field__label" for="wholesaleForm--{{ section.id }}">
+            {{ 'newsletter.label' | t }}
+          </label>
+        </div>
+        <span class="login__input-name">{{ 'wholesale.business_name' | t }}</span>
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="ContactForm-business_name"
+            name="contact[note][{{ 'wholesale.business_name' | t }}]"
+            value=""
+            aria-required="true"
+            placeholder="{{ 'wholesale.business_name' | t }}"
+            required
+          >
+          <label class="field__label" for="ContactForm-business_name">{{ 'wholesale.business_name' | t }}</label>
+        </div>
+        <span class="login__input-name">{{ 'wholesale.business_type' | t }}</span>
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="ContactForm-business_type"
+            name="contact[note][{{ 'wholesale.business_type' | t }}]"
+            value=""
+            aria-required="true"
+            placeholder="{{ 'wholesale.business_type' | t }}"
+            required
+          >
+          <label class="field__label" for="ContactForm-business_type">{{ 'wholesale.business_type' | t }}</label>
+        </div>
+        <span class="login__input-name">{{ 'wholesale.question_1' | t }}</span>
+        <div class="field">
+          <textarea
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="ContactForm-business_wish"
+            name="contact[note][{{ 'wholesale.question_1' | t }}]"
+            value=""
+            aria-required="true"
+            placeholder="{{ 'wholesale.question_1' | t }}"
+            required
+          ></textarea>
+          <label class="field__label" for="ContactForm-business_wish">Type here</label>
+        </div>
+        <span class="login__input-name">{{ 'wholesale.question_2' | t }}</span>
+        <div class="field">
+          <textarea
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="ContactForm-business_where"
+            name="contact[note][{{ 'wholesale.question_2' | t }}]"
+            value=""
+            aria-required="true"
+            placeholder="{{ 'wholesale.question_2' | t }}"
+            required
+          ></textarea>
+          <label class="field__label" for="ContactForm-business_where">Type here</label>
+        </div>
+
+        <span class="login__input-name">{{ 'wholesale.question_3' | t }}</span>
+        <div class="d-flex justify-content-center mb-4">
+          <input
+            class="select-role__input"
+            type="radio"
+            autocomplete="name"
+            id="ContactForm-business_sellYes"
+            name="contact[note][{{ 'wholesale.question_3' | t }}]"
+            value="Yes"
+            required
+            placeholder="{{ 'wholesale.question_3' | t }}"
+          >
+          <label class="select-role__input-label button button__outline" for="ContactForm-business_sellYes">Yes</label>
+
+          <input
+            class="select-role__input"
+            type="radio"
+            autocomplete="name"
+            id="ContactForm-business_sellNo"
+            name="contact[note][{{ 'wholesale.question_3' | t }}]"
+            value="No"
+            required
+            placeholder="{{ 'wholesale.question_3' | t }}"
+          >
+          <label class="select-role__input-label button button__outline" for="ContactForm-business_sellNo">No</label>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button
+            type="submit"
+            class="button button__primary"
+            name="commit"
+            id="wholesale"
+            aria-label="{{ 'newsletter.button_label' | t }}"
+          >
+            {{ 'newsletter.button_label' | t }}
+          </button>
+        </div>
+
+        {%- if form.errors -%}
+          {% comment %}
+            <small class="newsletter-form__message form__message" id="wholesale-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+          {% endcomment %}
+
+          <ul class="form-ul-errors list-style-none">
+            {% for error in form.errors %}
+              <li>
+                {% if error == 'form' %}
+                  {{ form.errors.messages[error] }}
+                {% else %}
+                  {{ form.errors.translated_fields[error] | replace: 'note', '' }}
+                  {{ form.errors.messages[error] | replace: 'is invalid', '' }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+          {% for error in form.errors %}
+            {% if form.errors.translated_fields[error] contains 'note' %}
+              <div class="form-message-errors">
+                {{ section.settings.email_error }}
+              </div>
+            {% endif %}
+          {% endfor %}
+        {%- endif -%}
+      </div>
+      {%- if form.posted_successfully? -%}
+        <div class="d-flex flex-column align-items-center pt-4">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1446_5308)">
+              <path d="M39.9998 0C17.9084 0 0 17.9084 0 39.9998C0 62.0911 17.9084 80.0002 39.9998 80.0002C62.0911 80.0002 80.0002 62.0911 80.0002 39.9998C79.9746 17.9194 62.0808 0.0256348 39.9998 0V0ZM39.9998 75.9997C20.1174 75.9997 3.99976 59.8821 3.99976 39.9998C3.99976 20.1174 20.1174 3.99976 39.9998 3.99976C59.8821 3.99976 75.9997 20.1174 75.9997 39.9998C75.9778 59.8733 59.8733 75.9778 39.9998 75.9997Z" fill="#CAA378"/>
+              <path d="M52.4384 28.7497L37.8347 47.0039L29.4147 38.5862C28.6296 37.8281 27.3823 37.8391 26.611 38.6103C25.8398 39.3816 25.8288 40.6289 26.5869 41.414L36.5866 51.4138C36.9616 51.7888 37.4707 51.9997 38.0009 51.9997C38.0376 52.0005 38.0749 51.999 38.1123 51.9961C38.6799 51.9653 39.208 51.6943 39.5632 51.2497L55.5629 31.2502C56.2536 30.3867 56.1137 29.1277 55.2509 28.4377C54.3881 27.7471 53.1284 27.8869 52.4384 28.7497Z" fill="#CAA378"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_1446_5308">
+                <rect width="80" height="80" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <h2 class="text-center text-48px color-text text-uppercase">{{ section.settings['thank-title'] }}</h2>
+          <h3
+            class="newsletter-form__message mt-4 newsletter-form__message--success form__message"
+            id="wholesale-success--{{ section.id }}"
+            tabindex="-1"
+            autofocus
+          >
+            {{ section.settings.thank }}
+          </h3>
+        </div>
+      {%- endif -%}
+    {% endform %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Wholesale Form",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Wholesale Form",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "Create an account and get unique offers",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "thank-title",
+      "default": "Thank you!",
+      "label": "Thank You Heading"
+    },
+    {
+      "type": "text",
+      "id": "thank",
+      "default": "Thank you submitting the PJB wholesale form. Please check your email with your approval and instructions regarding the next steps!!",
+      "label": "Thank You Message"
+    },
+    {
+      "type": "richtext",
+      "id": "email_error",
+      "label": "Email Error Message"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wholesale Form"
+    }
+  ]
+}
+{% endschema %}

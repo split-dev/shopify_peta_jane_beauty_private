@@ -1,0 +1,114 @@
+.template-collection {
+  .card--standard .card__inner {
+    height: auto !important;
+  }
+}
+.product-card-wrapper {
+  &:hover {
+    a {
+      text-decoration: none !important;
+    }
+    .product-card__desc {
+      opacity: 0;
+      pointer-events: none;
+      @include media-breakpoint-down(sm) {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    .product-card__show-button {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  .product-card__badge {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 2;
+    border: 1px solid transparent;
+    border-radius: var(--badge-corner-radius);
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    line-height: 1;
+    min-height: 25px;
+    padding: 0 1.2rem;
+    text-align: center;
+    border-color: rgb(var(--color-badge-background));
+    color: rgb(var(--color-badge-background));
+    word-break: break-word;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    &--offset {
+      @media (990px <= width < 1200px) {
+        right: unset;
+        left: 16px;
+        top: 48px;
+      }
+    }
+  }
+  .card--standard .card__inner {
+    min-height: 440px;
+    height: 440px;
+  }
+  .product-card__desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    transition: 0.2s;
+    color: $c-text;
+    max-height: 55px;
+    * {
+      margin: 0 !important;
+      padding: 0;
+    }
+  }
+
+  .product-card__show-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+    max-height: 52px;
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      pointer-events: auto;
+      opacity: 1;
+    }
+    a {
+      max-height: 52px;
+      padding: 0 24px;
+      @include media-breakpoint-down(sm) {
+        margin-top: 20px;
+      }
+    }
+  }
+  .price-item {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+  }
+  .oke-sr-count {
+    font-size: 14px !important;
+    color: #4d4d4d;
+  }
+}
+.quick-shop-box {
+  grid-row-start: 4;
+  margin: 0 0 1rem;
+  z-index: 1;
+}

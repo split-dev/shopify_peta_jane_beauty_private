@@ -1,0 +1,11 @@
+{% layout none %}
+{
+    "Name": "{{ product.title }}",
+    "ProductID": {{ product.selected_or_first_available_variant.id }},
+    "Categories": [{% for collection in product.collections %}"{{ collection.title }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+    "ImageURL": "{{ product.featured_media | image_url: width: 1000 }}",
+    "URL": "{{ product.url }}",
+    "Brand": "{{ product.vendor }}",
+    "Price": "{{ product.price | money }}",
+    "CompareAtPrice": "{{ product.compare_at_price | money }}"
+}

@@ -1,0 +1,203 @@
+.video-img-text {
+  .apply__video-overlay {
+    border-radius: 0 !important;
+  }
+  .js-marquee-video {
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    background-color: $c-text;
+    pointer-events: none;
+    width: 24px;
+    @include media-breakpoint-down(sm) {
+      display: none !important;
+    }
+    p {
+      color: #fff;
+      font-weight: 400;
+      font-size: 10px;
+      white-space: nowrap;
+      font-family: $font-family-base;
+      line-height: 220%;
+      margin: 5px 0;
+      writing-mode: tb-rl;
+      transform: rotate(180deg);
+      @include media-breakpoint-down(sm) {
+        transform: rotate(0deg);
+        writing-mode: horizontal-tb;
+        width: 100%;
+      }
+    }
+  }
+  .js-marquee-video-mob {
+    display: none;
+    background-color: $c-text;
+    @include media-breakpoint-down(sm) {
+      display: flex;
+    }
+    p {
+      color: #fff;
+      font-weight: 400;
+      font-size: 10px;
+      white-space: nowrap;
+      font-family: $font-family-base;
+      line-height: 220%;
+      margin: 5px 0;
+      writing-mode: tb-rl;
+      transform: rotate(180deg);
+      @include media-breakpoint-down(sm) {
+        transform: rotate(0deg);
+        writing-mode: horizontal-tb;
+        width: 100%;
+      }
+    }
+  }
+  &__wrapper {
+    border: 1px solid $c-text;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    @include media-breakpoint-down(sm) {
+     flex-direction: column;
+     border: none;
+      background: transparent !important;
+    }
+  }
+  &__content {
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
+  }
+  &__media {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 0 0 10px;
+    @include media-breakpoint-down(sm) {
+      flex: 0 0 100%;
+      border-radius: 10px 10px 0 0;
+    }
+    & video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: 0.2s;
+      min-height: 430px;
+      @include media-breakpoint-down(sm) {
+        min-height: auto;
+        display: block;
+        max-height: calc(100vw * 0.5625 - 100px);
+      }
+      @include media-breakpoint-down(xs) {
+        display: block;
+        max-height: calc(100vw * 0.5625 - 30px);
+      }
+    }
+    &-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #000;
+      z-index: 1;
+      border-radius: 10px;
+      display: block!important;
+    }
+    &-overlay.hide {
+      z-index: -1;
+    }
+    & svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 68px;
+      height: 40px;
+      cursor: pointer;
+      z-index: 2;
+      transition: all .3s;
+      & path {
+        fill: $c-white;
+      }
+      &:hover {
+        opacity: .6;
+      }
+    }
+    & svg.hide {
+      display: none;
+    }
+    &-image {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 10px;
+    }
+  }
+  &__content-text {
+    width: 100%;
+    padding: 35px 35px 35px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include media-breakpoint-down(sm) {
+      padding: 30px 0 15px 0;
+    }
+    h3 {
+      font-family: $headings-font-family;
+      margin-bottom: 16px !important;
+      @include media-breakpoint-down(sm) {
+        margin-left: 15px !important;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-text;
+    @include media-breakpoint-down(sm) {
+      margin-top: 16px;
+      margin-left: 15px;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 5px;
+      @include media-breakpoint-down(sm) {
+        font-weight: 500;
+      } 
+    }
+  }
+  &__button {
+    width: 100%;
+    margin-top: 35px;
+    a {
+      min-width: 240px;
+      @include media-breakpoint-down(xs) {
+        width: 100%;
+      }
+    }
+  }
+  .poster {
+    min-height: 438px;
+    max-height: 100%;
+    height: 100%;
+    border-radius: 0;
+    @include media-breakpoint-down(xs) {
+      max-height: 320px;
+      min-height: 320px;
+    }
+  }
+  &__block-item {
+    margin-bottom: 6px;
+    svg {
+      margin-right: 12px;
+      max-width: 18px;
+      max-height: 19px;
+    }
+  }
+}

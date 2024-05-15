@@ -1,0 +1,105 @@
+<style>
+  .top-banner {
+  {% if collection.image.src and section.settings.img-desktop == blank %}
+    background-image: url('{{ collection.image.src | img_url: 'master' }}');
+  {% else %}
+    background-image: url('{{ section.settings.img-desktop | img_url: 'master' }}');
+  {% endif %}
+
+  }
+  {% if section.settings.img-mobile %}
+  @media (max-width: 767px) {
+    .top-banner {
+      background-image: url('{{ section.settings.img-mobile | img_url: 'master' }}');
+    }
+  }
+  {% endif %}
+
+  {% if section.settings.enable-overlay %}
+    .top-banner:before {
+      content: "";
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      background: rgba(6, 4, 0, 0.48);
+     }
+  {% endif %}
+</style>
+<div class="page-width top-banner__mobile-box">
+  <div class="top-banner justify-content-center">
+    <div class="top-banner__wrapper">
+      <div class="top-banner__info d-flex flex-column align-items-center justify-content-center">
+        {% if section.settings.title == blank %}
+          {% if collection.title != blank %}
+            <h1 class="h1 mt-0 text-center">
+              {{ collection.title }}
+            </h1>
+          {% endif %}
+          {% if page.title != blank %}
+            <h1 class="h1 mt-0 text-center">
+              {{ page.title }}
+            </h1>
+          {% endif %}
+        {% else %}
+          <h1 class="h1 mt-0 text-center">
+            {{ section.settings.title }}
+          </h1>
+        {% endif %}
+
+        {% if section.settings.text == blank %}
+          {% if collection.description != blank %}
+            <div class="top-banner__text d-flex flex-column align-items-center justify-content-center text-center">
+              {{ collection.description }}
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="top-banner__text d-flex flex-column align-items-center justify-content-center text-center">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Top Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img-desktop",
+      "label": "BG desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "img-mobile",
+      "label": "BG mobile (optional)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable-overlay",
+      "default": false,
+      "label": "Enable Overlay"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Top Banner",
+      "category": "New"
+    }
+  ]
+}
+{% endschema %}

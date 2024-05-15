@@ -1,0 +1,246 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="inst-block section-{{ section.id }}-padding ">
+  {%- if section.settings.marquee != blank -%}
+    <div class="marquee-insta">
+      <h3>{{ section.settings.marquee }}</h3>
+    </div>
+  {%- endif -%}
+  <div class="page-width">
+    <div class="section-title">
+      <h2 class="h3 mt-0 color-text text-center text-uppercase">{{ section.settings.title }}</h2>
+      <h5 class="mt-0 color-text text-center text-uppercase">{{ section.settings.subtitle }}</h5>
+      <div class="d-flex justify-content-center align-items-center">
+        {%- if settings.social_instagram_link != blank -%}
+          <a
+            href="{{ settings.social_instagram_link }}"
+            aria-label="Instagram"
+            class="px-2 link text-center inst-block__link d-block"
+          >
+            {% render 'icon-instagram' %}
+          </a>
+        {%- endif -%}
+        {%- if settings.social_tiktok_link != blank -%}
+          <a
+            href="{{ settings.social_tiktok_link }}"
+            aria-label="TikTok"
+            class="px-2 link text-center inst-block__link d-block"
+          >
+            {% render 'icon-tiktok' %}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  {% if section.settings.app %}
+    <script
+      src="//foursixty.com/media/scripts/fs.slider.v2.5.js"
+      data-feed-id="peta-jane-beauty"
+      data-theme="slider_v2_5"
+      data-show-okendo-stars="true"
+      data-cell-size="20%"
+      defer
+    ></script>
+  {% else %}
+    <div class="inst-block__wrapper w-100 overflow-hidden">
+      <div class="page-width">
+        <div class="inst-block__slider position-relative js-inst-block-slider-init swiper-container">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="swiper-slide inst-block__item">
+                {% if block.settings.video_link != blank %}
+                  <div class="slideshow-videos__media slideshow-videos__media-{{ block.id }} " data-video-wrapper>
+                    <div
+                      class="poster"
+                      data-bg="{{ block.settings.video_image | img_url: 'master' }}"
+                    >
+                      <a
+                        class="iframe-lightbox-custom"
+                        href="{{ block.settings.video_link }}"
+                        data-padding-bottom="56.25%"
+                      >
+                        {% render 'icon-play' %}
+                      </a>
+                    </div>
+                    <img class="slideshow-videos__img" src="{{ block.settings.video_image | img_url: '700x' }}">
+                    <div class="apply__video-overlay" style="opacity: 0.{{ section.settings.overlay_opacity }}"></div>
+                  </div>
+                {% else %}
+                  <div class="inst-block__img w-100">
+                    <img
+                      loading="lazy"
+                      src="{{ block.settings.img | img_url: '405x' }}"
+                      alt="{{ block.settings.img.alt }}"
+                    >
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  function MarqueeInsta(selector, speed) {
+    const parentSelector = document.querySelector(selector);
+    const clone = parentSelector.innerHTML;
+    const firstElement = parentSelector.children[0];
+    let i = 0;
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+
+    setInterval(function () {
+      firstElement.style.marginLeft = `-${i}px`;
+      if (i > firstElement.clientWidth) {
+        i = 0;
+      }
+      i = i + speed;
+    }, 0);
+  }
+
+  window.addEventListener('load', MarqueeInsta('.marquee-insta', 0.2));
+</script>
+
+<script>
+  const allVideosInsta = document.querySelectorAll('.inst-block .inst-block__item video');
+  const allButtonsInsta = document.querySelectorAll('.inst-block .inst-block__item svg');
+  const allImgInsta = document.querySelectorAll('.inst-block .inst-block__item .slideshow-videos__img');
+
+  for (let i = 0; i < allButtonsInsta.length; i++) {
+    allButtonsInsta[i].addEventListener('click', () => {
+      for (let k = 0; k < allButtonsInsta.length; k++) {
+        if (allButtonsInsta[k] != allButtonsInsta[i]) {
+          allVideosInsta[k].pause();
+          allVideosInsta[k].classList.remove('show');
+          allVideosInsta[k].nextElementSibling.classList.remove('hide');
+          allVideosInsta[k].nextElementSibling.nextElementSibling.classList.remove('hide');
+          allVideosInsta[k].nextElementSibling.nextElementSibling.nextElementSibling.classList.remove('hide');
+        }
+      }
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Instagram block",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "app",
+      "label": "Use Shoppable Instagram & UGC",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "GET SOCIAL"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "WITH US"
+    },
+    {
+      "type": "text",
+      "id": "marquee",
+      "default": "&nbsp;&nbsp;Be part of us&nbsp;&nbsp;&nbsp;",
+      "label": "Tiсker text"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Block Overlay Opacity",
+      "min": 0,
+      "max": 99,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "video_link",
+          "label": "Video link"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_image",
+          "label": "Video Poster"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram block",
+      "category": "New"
+    }
+  ]
+}
+{% endschema %}

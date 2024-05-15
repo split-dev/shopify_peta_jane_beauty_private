@@ -1,0 +1,21 @@
+.featured-collection-new {
+  &__slider {
+    overflow: hidden;
+    @include media-breakpoint-down(xs) {
+      overflow: visible;
+    }
+  }
+  .swiper-slide {
+    height: auto !important;
+  }
+  .product-card-wrapper {
+    width: 100%;
+  }
+  .swiper-nav-prev,
+  .swiper-nav-next {
+    top: 32%;
+    @include media-breakpoint-down(xs) {
+      top: 30%;
+    }
+  }
+}
